@@ -1,0 +1,37 @@
+swagger: "2.0"
+info:
+  title: Blood Donor Registry for donors' application
+  description: Should add more description?
+  version: "0.0.1"
+# the domain of the service
+host: service.blooddonorregistry.gr
+# array of all schemes that your API supports
+schemes:
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /locale/{lang}.json:
+    get:
+      summary: Get i18n json
+      description: |
+        All the texts that the UI needs to display in key-value pairs.
+
+        Available languages:
+
+        - English : en
+        - Greek : el
+
+      operationId: getLocale
+      parameters:
+      - name: 'lang'
+        in: path
+        type: string
+        required: true
+      responses:
+        200:
+          description: i18n json
+          schema:
+            type: object
