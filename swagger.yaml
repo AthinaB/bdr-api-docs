@@ -35,3 +35,23 @@ paths:
           description: i18n json
           schema:
             type: object
+  /blood-donor-registry-web-public/rest/authentication/logged-on:
+    get:
+      summary: tba
+      description: tba
+      operationId: tba1
+      responses:
+        200:
+          description: tba
+          schema:
+            type: object
+  /blood-donor-registry-web-public/rest/blooddonor/8616993:
+    get:
+      summary: tba
+      description: tba
+      operationId: tba2
+      responses:
+        200:
+          description: tba
+          schema:
+            type: object
