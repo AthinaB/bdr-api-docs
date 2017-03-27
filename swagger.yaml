@@ -10,14 +10,18 @@ schemes:
   - https
 produces:
   - application/json
+  - text/html
 consumes:
   - application/json
+  - text/plain
 paths:
   /locale/{lang}.json:
     get:
       summary: Get i18n json
       description: |
         All the texts that the UI needs to display in key-value pairs.
+
+        No login required.
 
         Available languages:
 
@@ -30,11 +34,33 @@ paths:
         in: path
         type: string
         required: true
+      produces:
+        - application/json
+        - text/html
       responses:
         200:
           description: i18n json
           schema:
             type: object
+        404:
+          description: |
+            Not found
+
+            Returns html
+          schema:
+            type: object
+          examples:
+            text/html: |
+              <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+              <html>
+                <head><title>404 Not Found</title></head>
+                <body>
+                  <h1>Not Found</h1>
+                  <p>The requested URL /locale/gr.json was not found on this server.</p>
+                  <hr>
+                  <address>Apache/2.4.10 (Debian) Server at web.test.bdr.grnet.gr Port 443</address>
+                </body>
+              </html>
   /blood-donor-registry-web-public/rest/authentication/logged-on:
     get:
       summary: tba
