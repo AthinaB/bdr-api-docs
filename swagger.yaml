@@ -63,14 +63,113 @@ paths:
               </html>
   /blood-donor-registry-web-public/rest/authentication/logged-on:
     get:
-      summary: tba
-      description: tba
-      operationId: tba1
+      summary: Retrieve user data
+      description: |
+        Se
+        Login is required.
+      operationId: GetUserData
+      parameters:
+        - name: X-Auth-Token
+          required: true
+          description: authentication data
+          in: header
+          type: string
+      consumes:
+        - application/json
+        - text/plain
+      produces:
+        - application/json
       responses:
         200:
-          description: tba
+          description: Retrieve user data
           schema:
-            type: object
+            "$ref": "#/definitions/User"
+          examples:
+            {
+              "acceptedUsageTerms": true,
+              "acceptsInfoMaterial": true,
+              "bloodDonor": {
+                "data": {
+                  "ama": "1600791400",
+                  "amka": "23038901379",
+                  "ast": "Γ",
+                  "birthCountry": {
+                    "alpha2": "GR",
+                    "alpha3": "GRC",
+                    "id": "300",
+                    "name": {
+                      "el": "ΕΛΛΑΔΑ",
+                      "en": "GREECE"
+                      }
+                    },
+                   "birthDate": "1989-03-23",
+                   "birthRegion": {
+                      "id": "11",
+                      "name": {
+                        "el": "ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ",
+                        "en": "VOREIOU AIGAIOU"
+                      }
+                    },
+                    "bloodGroup": "A",
+                    "city": {
+                      "id": "9088",
+                      "name": {
+                        "el": "ΖΗΡΟΥ",
+                        "en": "ZIROU"
+                      },
+                      "prefecture": {
+                        "id": "0404",
+                        "name": {
+                          "el": "ΠΡΕΒΕΖΑΣ",
+                          "en": "PREVEZAS"
+                        },
+                        "region": {
+                          "id": "4",
+                          "name": {
+                            "el": "ΗΠΕΙΡΟΥ",
+                            "en": "IPEIROU"
+                          }
+                        }
+                      }
+                    },
+                    "education": "LEVEL7",
+                    "email": "papadakis@example.com",
+                    "fathersName": "ΓΕΩΡΓΙΟΣ",
+                    "firstname": "ΙΩΑΝΝΗΣ",
+                    "gender": "MALE",
+                    "imported": false,
+                    "lastname": "ΠΑΠΑΔΑΚΗΣ",
+                    "mothersName": "ΙΟΥΛΙΑ",
+                    "phoneNumber": "2152157865",
+                    "rhesus": "NEGATIVE",
+                    "ssnCountry": {
+                      "alpha2": "GR",
+                      "alpha3": "GRC",
+                      "id": "300",
+                      "name": {
+                        "el": "ΕΛΛΑΔΑ",
+                        "en": "GREECE"
+                      }
+                    },
+                  "street": "ΓΚΑΝΤΕΜΗ",
+                  "streetNumber": "13"
+                },
+                "deleted": false,
+                "duplicate": false,
+                "id": 87588,
+                "idikaVerified": true
+              },
+              "email": "papadakis@example.com",
+              "emailValid": true,
+              "id": 8616993,
+              "registrationDate": "2016-06-23T13:03:47.308+0000",
+              "registrationId": "CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc",
+              "status": "ACTIVE",
+              "userType": "BloodDonorUser",
+              "username": "papadakis",
+              "version": 4
+            }
+
   /blood-donor-registry-web-public/rest/blooddonor/8616993:
     get:
       summary: tba
@@ -81,3 +180,149 @@ paths:
           description: tba
           schema:
             type: object
+definitions:
+  User:
+    type: object
+    properties:
+      acceptedUsageTerms:
+        type: boolean
+      acceptsInfoMaterial:
+        type: boolean
+      bloodDonor:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              ama:
+                type: integer
+              amka:
+                type: integer
+              ast:
+                type: string
+              birthContry:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  alpha2:
+                    type: string
+                  alpha3:
+                    type: string
+                  name:
+                    type: object
+                    properties:
+                      el:
+                        type: string
+                      en:
+                        type: string
+              birthDate:
+                type: string
+                format: date
+              birthRegion:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: object
+                    properties:
+                      el:
+                        type: string
+                      en:
+                        type: string
+              bloodGroup:
+                type: string
+              city:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: object
+                    properties:
+                      el:
+                        type: string
+                      en:
+                        type: string
+                  prefecture:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: object
+                        properties:
+                          el:
+                            type: string
+                          en:
+                            type: string
+              education:
+                type: string
+              email:
+                type: string
+              fathersName:
+                type: string
+              firstname:
+                type: string
+              gender:
+                type: string
+              imported:
+                type: boolean
+              lastname:
+                type: string
+              mothersName:
+                type: string
+              phoneNumber:
+                type: integer
+              rhesus:
+                type: string
+              ssnCountry:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  alpha2:
+                    type: string
+                  alpha3:
+                    type: string
+                  name:
+                    type: object
+                    properties:
+                      el:
+                        type: string
+                      en:
+                        type: string
+              street:
+                type: string
+              streetNumber:
+                type: integer
+          deleted:
+            type: boolean
+          duplicate:
+            type: boolean
+          id:
+            type: integer
+          idikaVerified:
+            type: boolean
+      email:
+        type: string
+      emailValid:
+        type: boolean
+      id:
+        type: integer
+      registrationDate:
+        type: string
+        format: date-time
+      registrationId:
+        type: string
+      status:
+        type: string
+      userType:
+        type: string
+      username:
+        type: string
+      version:
+        type: integer
+      name:
+        type: string
