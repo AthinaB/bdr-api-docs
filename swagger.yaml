@@ -14,6 +14,7 @@ produces:
 consumes:
   - application/json
   - text/plain
+
 paths:
   /locale/{lang}.json:
     get:
@@ -21,7 +22,7 @@ paths:
       description: |
         All the texts that the UI needs to display in key-value pairs.
 
-        No login required.
+        No login (token) required.
 
         Available languages:
 
@@ -34,6 +35,7 @@ paths:
         in: path
         type: string
         required: true
+      security: []
       produces:
         - application/json
         - text/html
@@ -61,24 +63,22 @@ paths:
                   <address>Apache/2.4.10 (Debian) Server at web.test.bdr.grnet.gr Port 443</address>
                 </body>
               </html>
+
+
   /blood-donor-registry-web-public/rest/authentication/logged-on:
     get:
       summary: Retrieve user data
       description: |
-        Se
-        Login is required.
+        TBA
+        Login required.
       operationId: GetUserData
-      parameters:
-        - name: X-Auth-Token
-          required: true
-          description: authentication data
-          in: header
-          type: string
       consumes:
         - application/json
         - text/plain
       produces:
         - application/json
+      security:
+        - token: [ ]
       responses:
         200:
           description: Retrieve user data
@@ -180,6 +180,15 @@ paths:
           description: tba
           schema:
             type: object
+
+
+securityDefinitions:
+  token:
+    type: apiKey
+    in: header
+    name: X-Auth-Token
+
+
 definitions:
   User:
     type: object
