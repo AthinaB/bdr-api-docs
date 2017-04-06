@@ -190,6 +190,48 @@ securityDefinitions:
 
 
 definitions:
+  City:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        $ref: "#/definitions/Multilanguage"
+      prefecture:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            $ref: "#/definitions/Multilanguage"
+  Country:
+    type: object
+    properties:
+      id:
+        type: integer
+      alpha2:
+        type: string
+      alpha3:
+        type: string
+      name:
+        $ref: "#/definitions/Multilanguage"
+
+  Multilanguage:
+    type: object
+    properties:
+      el:
+        type: string
+      en:
+        type: string
+
+  Region:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        $ref: "#/definitions/Multilanguage"
+
   User:
     type: object
     properties:
@@ -210,62 +252,16 @@ definitions:
               ast:
                 type: string
               birthContry:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  alpha2:
-                    type: string
-                  alpha3:
-                    type: string
-                  name:
-                    type: object
-                    properties:
-                      el:
-                        type: string
-                      en:
-                        type: string
+                $ref: "#/definitions/Country"
               birthDate:
                 type: string
                 format: date
               birthRegion:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: object
-                    properties:
-                      el:
-                        type: string
-                      en:
-                        type: string
+                $ref: "#/definitions/Region"
               bloodGroup:
                 type: string
               city:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: object
-                    properties:
-                      el:
-                        type: string
-                      en:
-                        type: string
-                  prefecture:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                      name:
-                        type: object
-                        properties:
-                          el:
-                            type: string
-                          en:
-                            type: string
+                $ref: "#/definitions/City"
               education:
                 type: string
               email:
@@ -287,21 +283,7 @@ definitions:
               rhesus:
                 type: string
               ssnCountry:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  alpha2:
-                    type: string
-                  alpha3:
-                    type: string
-                  name:
-                    type: object
-                    properties:
-                      el:
-                        type: string
-                      en:
-                        type: string
+                $ref: "#/definitions/Country"
               street:
                 type: string
               streetNumber:
