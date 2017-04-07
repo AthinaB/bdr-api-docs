@@ -71,7 +71,7 @@ paths:
       description: |
         TBA
         Login required.
-      operationId: GetUserData
+      operationId: GetUserAData
       consumes:
         - application/json
         - text/plain
@@ -170,13 +170,13 @@ paths:
               "version": 4
             }
 
-  /blood-donor-registry-web-public/rest/blooddonor/{donorID}:
+  /blood-donor-registry-web-public/rest/blooddonor/{id}:
     get:
       summary: tba
-      description: tba
-      operationId: tba2
+      description: Retrieve user data
+      operationId: GetUserBData
       parameters:
-      - name: 'donorID'
+      - name: 'id'
         in: path
         type: string
         required: true
@@ -185,7 +185,82 @@ paths:
           description: tba
           schema:
             $ref: "#/definitions/UserB"
-
+          examples:
+            {
+              "bloodDonor":{
+                "id":87588,
+                "city":{
+                  "prefecture":{
+                    "id":"0404",
+                    "name":"ΠΡΕΒΕΖΑΣ",
+                    "region":{
+                      "id":"4",
+                      "name":"ΗΠΕΙΡΟΥ"
+                    }
+                  },
+                  "id":"9088",
+                  "name":"ΖΗΡΟΥ"
+                },
+                "verification":{
+                  "ama":false,
+                  "adt":false,
+                  "ast":false,
+                  "adb":false,
+                  "amka":false,
+                  "aad":false,
+                  "aat":false,
+                  "aap":false,
+                  "firstname":false,
+                  "lastname":false,
+                  "fathersName":false,
+                  "mothersName":false,
+                  "birthDate":false
+                },
+                "birthCountry":{
+                  "id":"300",
+                  "alpha2":"GR",
+                  "alpha3":"GRC",
+                  "name":"ΕΛΛΑΔΑ"
+                },
+                "birthRegion":{
+                  "id":"11",
+                  "name":"ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ"
+                },
+                "discardedOnce":false,
+                "recentVisit":false,
+                "idikaVerified":true,
+                "ssnCountry":{
+                  "id":"300",
+                  "alpha2":"GR",
+                  "alpha3":"GRC",
+                  "name":"ΕΛΛΑΔΑ"
+                },
+                "firstname":"ΙΩΑΝΝΗΣ",
+                "lastname":"ΠΑΠΑΔΑΚΗΣ",
+                "ast":"Γ",
+                "education":"LEVEL7",
+                "street":"ΜΕΣΟΓΕΙΩΝ",
+                "streetNumber":"13",
+                "phoneNumber":"2152157865",
+                "email":"papadakis@example.com",
+                "ama":"1600791400",
+                "bloodGroup":"A",
+                "rhesus":"NEGATIVE",
+                "fathersName":"ΓΕΩΡΓΙΟΣ",
+                "mothersName":"ΙΟΥΛΙΑ",
+                "amka":"23038901379",
+                "gender":"MALE",
+                "birthDate":"1989-03-23"
+              },
+              "id":8616993,
+              "username":"papadakis",
+              "email": "papadakis@example.com",
+              "status":"ACTIVE",
+              "userType":"BloodDonorUser",
+              "emailValid":true,
+              "registrationDate":"2016-06-23T13:03:47.308+0000",
+              "registrationId":"CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc"
+            }
 
 securityDefinitions:
   token:
