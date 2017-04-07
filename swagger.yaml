@@ -170,11 +170,16 @@ paths:
               "version": 4
             }
 
-  /blood-donor-registry-web-public/rest/blooddonor/8616993:
+  /blood-donor-registry-web-public/rest/blooddonor/{donorID}:
     get:
       summary: tba
       description: tba
       operationId: tba2
+      parameters:
+      - name: 'donorID'
+        in: path
+        type: string
+        required: true
       responses:
         200:
           description: tba
@@ -315,5 +320,4 @@ definitions:
         type: string
       version:
         type: integer
-      name:
-        type: string
+
