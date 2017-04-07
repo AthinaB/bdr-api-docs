@@ -310,12 +310,65 @@ paths:
 
       responses:
         404:
-          description: TBA
+          description: Not Found
           schema:
             $ref: "#/definitions/ErrorMsg"
           examples:
             application/json:
               { error: "Not Found" }
+
+  /blood-donor-registry-web-public/rest/blooddonor/region/countries:
+    get:
+      summary:
+        Get id, name and codes for all countries.
+
+      description: |
+        The name of the country is in the language that the request mentions.
+
+        The code of each country comes in 2 forms:
+
+        - ISO 3166-1 alpha-2
+        - ISO 3166-1 alpha-3
+
+      operationId: GetCountriesList
+      consumes:
+        - application/json
+        - text/plain
+      produces:
+        - application/json
+      security:
+        - token: [ ]
+      parameters:
+      - name: 'X-Lang'
+        in: header
+        type: string
+        required: true
+        description: |
+          Possible values: en, el
+
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/CountrySingleLanguage"
+          examples:
+            application/json:
+              [
+                {
+                  alpha2:"AF",
+                  alpha3:"AFG",
+                  id:"4",
+                  name:"AFGHANISTAN"
+                },
+                {
+                  id:"8",
+                  alpha2:"AL",
+                  alpha3:"ALB",
+                  name:"ALBANIA"
+                }
+              ]
 
 securityDefinitions:
   token:
