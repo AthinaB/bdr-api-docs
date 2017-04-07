@@ -184,7 +184,7 @@ paths:
         200:
           description: tba
           schema:
-            type: object
+            $ref: "#/definitions/UserB"
 
 
 securityDefinitions:
@@ -297,7 +297,7 @@ definitions:
                 type: integer
               ast:
                 type: string
-              birthContry:
+              birthCountry:
                 $ref: "#/definitions/CountryMultiLanguage"
               birthDate:
                 type: string
@@ -362,3 +362,104 @@ definitions:
       version:
         type: integer
 
+  UserB:
+    type: object
+    properties:
+      bloodDonor:
+        type: object
+        properties:
+          ama:
+            type: integer
+          amka:
+            type: integer
+          ast:
+            type: string
+          birthCountry:
+            $ref: "#/definitions/CountrySingleLanguage"
+          birthDate:
+            type: string
+            format: date
+          birthRegion:
+            $ref: "#/definitions/RegionSingleLanguage"
+          bloodGroup:
+            type: string
+          city:
+            $ref: "#/definitions/CitySingleLanguage"
+          discardedOnce:
+            type: boolean
+          education:
+            type: string
+          email:
+            type: string
+          fathersName:
+            type: string
+          firstname:
+            type: string
+          gender:
+            type: string
+          id:
+            type: integer
+          idikaVerified:
+            type: boolean
+          lastname:
+            type: string
+          mothersName:
+            type: string
+          phoneNumber:
+            type: integer
+          recentVisit:
+            type: boolean
+          rhesus:
+            type: string
+          ssnCountry:
+            $ref: "#/definitions/CountrySingleLanguage"
+          street:
+            type: string
+          streetNumber:
+            type: integer
+          verification:
+            type: object
+            properties:
+              aad:
+                type: boolean
+              aap:
+                type: boolean
+              aat:
+                type: boolean
+              adb:
+                type: boolean
+              adt:
+                type: boolean
+              ama:
+                type: boolean
+              amka:
+                type: boolean
+              ast:
+                type: boolean
+              birthDate:
+                type: boolean
+              fathersName:
+                type: boolean
+              firstname:
+                type: boolean
+              lastname:
+                type: boolean
+              mothersName:
+                type: boolean
+      email:
+        type: string
+      emailValid:
+        type: boolean
+      id:
+        type: integer
+      registrationDate:
+        type: string
+        format: date-time
+      registrationId:
+        type: string
+      status:
+        type: string
+      userType:
+        type: string
+      username:
+        type: string
