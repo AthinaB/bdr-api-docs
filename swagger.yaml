@@ -290,6 +290,33 @@ paths:
             application/json:
               { error: "Not Found" }
 
+  /blood-donor-registry-web-public/rest/blooddonor/{id}/request:
+    get:
+      summary: TBA
+      description: Retrieve user request
+      operationId: GetDonorRequest
+      parameters:
+      - name: 'id'
+        in: path
+        type: string
+        required: true
+      consumes:
+        - application/json
+        - text/plain
+      produces:
+        - application/json
+      security:
+        - token: [ ]
+
+      responses:
+        404:
+          description: TBA
+          schema:
+            $ref: "#/definitions/ErrorMsg"
+          examples:
+            application/json:
+              { error: "Not Found" }
+
 securityDefinitions:
   token:
     type: apiKey
