@@ -195,6 +195,7 @@ securityDefinitions:
 
 
 definitions:
+
   CityMultilanguage:
     type: object
     properties:
@@ -211,6 +212,24 @@ definitions:
             $ref: "#/definitions/Multilanguage"
           region:
             $ref: "#/definitions/RegionMultilanguage"
+
+  CitySingleLanguage:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      prefecture:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          region:
+            $ref: "#/definitions/RegionSingleLanguage"
+
   CountryMultilanguage:
     type: object
     properties:
@@ -223,12 +242,16 @@ definitions:
       name:
         $ref: "#/definitions/Multilanguage"
 
-  Multilanguage:
+  CountrySingleLanguage:
     type: object
     properties:
-      el:
+      id:
+        type: integer
+      alpha2:
         type: string
-      en:
+      alpha3:
+        type: string
+      name:
         type: string
 
   RegionMultilanguage:
@@ -238,6 +261,22 @@ definitions:
         type: integer
       name:
         $ref: "#/definitions/Multilanguage"
+
+  RegionSingleLanguage:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+
+  Multilanguage:
+    type: object
+    properties:
+      el:
+        type: string
+      en:
+        type: string
 
   User:
     type: object
