@@ -41,14 +41,12 @@ paths:
         - text/html
       responses:
         200:
-          description: i18n json
+          description: OK
           schema:
             type: object
         404:
-          description: |
-            Not found
+          description: Not found
 
-            Returns html
           schema:
             type: object
           examples:
@@ -81,7 +79,7 @@ paths:
         - token: [ ]
       responses:
         200:
-          description: Retrieve user data
+          description: OK
           schema:
             "$ref": "#/definitions/UserA"
           examples:
@@ -190,7 +188,7 @@ paths:
 
       responses:
         200:
-          description: tba
+          description: OK
           schema:
             $ref: "#/definitions/UserB"
           examples:
