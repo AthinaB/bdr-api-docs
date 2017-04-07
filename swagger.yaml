@@ -195,7 +195,7 @@ securityDefinitions:
 
 
 definitions:
-  City:
+  CityMultilanguage:
     type: object
     properties:
       id:
@@ -209,7 +209,9 @@ definitions:
             type: integer
           name:
             $ref: "#/definitions/Multilanguage"
-  Country:
+          region:
+            $ref: "#/definitions/RegionMultilanguage"
+  CountryMultilanguage:
     type: object
     properties:
       id:
@@ -229,7 +231,7 @@ definitions:
       en:
         type: string
 
-  Region:
+  RegionMultilanguage:
     type: object
     properties:
       id:
@@ -257,16 +259,16 @@ definitions:
               ast:
                 type: string
               birthContry:
-                $ref: "#/definitions/Country"
+                $ref: "#/definitions/CountryMultilanguage"
               birthDate:
                 type: string
                 format: date
               birthRegion:
-                $ref: "#/definitions/Region"
+                $ref: "#/definitions/RegionMultilanguage"
               bloodGroup:
                 type: string
               city:
-                $ref: "#/definitions/City"
+                $ref: "#/definitions/CityMultilanguage"
               education:
                 type: string
               email:
@@ -288,7 +290,7 @@ definitions:
               rhesus:
                 type: string
               ssnCountry:
-                $ref: "#/definitions/Country"
+                $ref: "#/definitions/CountryMultilanguage"
               street:
                 type: string
               streetNumber:
