@@ -172,7 +172,7 @@ paths:
 
   /blood-donor-registry-web-public/rest/blooddonor/{id}:
     get:
-      summary: tba
+      summary: TBA
       description: Retrieve user data
       operationId: GetUserBData
       parameters:
@@ -180,6 +180,14 @@ paths:
         in: path
         type: string
         required: true
+      consumes:
+        - application/json
+        - text/plain
+      produces:
+        - application/json
+      security:
+        - token: [ ]
+
       responses:
         200:
           description: tba
@@ -261,6 +269,26 @@ paths:
               "registrationDate":"2016-06-23T13:03:47.308+0000",
               "registrationId":"CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc"
             }
+        401:
+          description: |
+            Unauthorized.
+
+            When the ID is valid but the logged in user has no permission to get its data.
+          schema:
+            $ref: "#/definitions/ErrorMsg"
+          examples:
+            application/json:
+              { error: "Not Allowed" }
+        404:
+          description: |
+            Not found.
+
+            When there is no blood donor with the current ID or no ID has been sent.
+          schema:
+            $ref: "#/definitions/ErrorMsg"
+          examples:
+            application/json:
+              { error: "Not Found" }
 
 securityDefinitions:
   token:
@@ -270,6 +298,12 @@ securityDefinitions:
 
 
 definitions:
+
+  ErrorMsg:
+    type: object
+    properties:
+      error:
+        type: string
 
   CityMultiLanguage:
     type: object
