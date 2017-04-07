@@ -1,2 +1,2 @@
 # bdr-api-docs
-BDR API docs for donors' application
+[BDR API](https://athinab.github.io/bdr-api-docs/)
