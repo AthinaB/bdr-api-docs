@@ -318,7 +318,7 @@ paths:
   /blood-donor-registry-web-public/rest/blooddonor/region/countries:
     get:
       summary:
-        Get id, name and codes for all countries.
+        Get id, name and codes of all countries.
 
       description: |
         The name of the country is in the language that the request mentions.
@@ -367,6 +367,49 @@ paths:
                   name:"ALBANIA"
                 }
               ]
+
+  /blood-donor-registry-web-public/rest/blooddonor/region/regions:
+    get:
+      summary:
+        Get id and name of all greek regions.
+
+      description: The name of the region is in the language that the request mentions.
+      operationId: GetRegionsList
+      consumes:
+        - application/json
+        - text/plain
+      produces:
+        - application/json
+      security:
+        - token: [ ]
+      parameters:
+      - name: 'X-Lang'
+        in: header
+        type: string
+        required: true
+        description: |
+          Possible values: en, el
+
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/RegionSingleLanguage"
+          examples:
+            application/json:
+              [
+                {
+                  id:"1",
+                  name:"AN. MAKEDONIAS & THRAKIS"
+                },
+                {
+                  id:"2",
+                  name:"KENTRIKIS MAKEDONIAS"
+                }
+              ]
+
 
 securityDefinitions:
   token:
