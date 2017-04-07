@@ -83,7 +83,7 @@ paths:
         200:
           description: Retrieve user data
           schema:
-            "$ref": "#/definitions/User"
+            "$ref": "#/definitions/UserA"
           examples:
             {
               "acceptedUsageTerms": true,
@@ -278,7 +278,7 @@ definitions:
       en:
         type: string
 
-  User:
+  UserA:
     type: object
     properties:
       acceptedUsageTerms:
