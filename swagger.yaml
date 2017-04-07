@@ -196,22 +196,22 @@ securityDefinitions:
 
 definitions:
 
-  CityMultilanguage:
+  CityMultiLanguage:
     type: object
     properties:
       id:
         type: integer
       name:
-        $ref: "#/definitions/Multilanguage"
+        $ref: "#/definitions/MultiLanguage"
       prefecture:
         type: object
         properties:
           id:
             type: integer
           name:
-            $ref: "#/definitions/Multilanguage"
+            $ref: "#/definitions/MultiLanguage"
           region:
-            $ref: "#/definitions/RegionMultilanguage"
+            $ref: "#/definitions/RegionMultiLanguage"
 
   CitySingleLanguage:
     type: object
@@ -230,7 +230,7 @@ definitions:
           region:
             $ref: "#/definitions/RegionSingleLanguage"
 
-  CountryMultilanguage:
+  CountryMultiLanguage:
     type: object
     properties:
       id:
@@ -240,7 +240,7 @@ definitions:
       alpha3:
         type: string
       name:
-        $ref: "#/definitions/Multilanguage"
+        $ref: "#/definitions/MultiLanguage"
 
   CountrySingleLanguage:
     type: object
@@ -254,13 +254,13 @@ definitions:
       name:
         type: string
 
-  RegionMultilanguage:
+  RegionMultiLanguage:
     type: object
     properties:
       id:
         type: integer
       name:
-        $ref: "#/definitions/Multilanguage"
+        $ref: "#/definitions/MultiLanguage"
 
   RegionSingleLanguage:
     type: object
@@ -270,7 +270,7 @@ definitions:
       name:
         type: string
 
-  Multilanguage:
+  MultiLanguage:
     type: object
     properties:
       el:
@@ -298,16 +298,16 @@ definitions:
               ast:
                 type: string
               birthContry:
-                $ref: "#/definitions/CountryMultilanguage"
+                $ref: "#/definitions/CountryMultiLanguage"
               birthDate:
                 type: string
                 format: date
               birthRegion:
-                $ref: "#/definitions/RegionMultilanguage"
+                $ref: "#/definitions/RegionMultiLanguage"
               bloodGroup:
                 type: string
               city:
-                $ref: "#/definitions/CityMultilanguage"
+                $ref: "#/definitions/CityMultiLanguage"
               education:
                 type: string
               email:
@@ -329,7 +329,7 @@ definitions:
               rhesus:
                 type: string
               ssnCountry:
-                $ref: "#/definitions/CountryMultilanguage"
+                $ref: "#/definitions/CountryMultiLanguage"
               street:
                 type: string
               streetNumber:
