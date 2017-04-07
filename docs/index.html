@@ -710,31 +710,61 @@ margin-bottom: 20px;
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-    defs.City = {
+    defs.CityMultiLanguage = {
   "type" : "object",
   "properties" : {
     "id" : {
       "type" : "integer"
     },
     "name" : {
-      "$ref" : "#/definitions/Multilanguage"
+      "$ref" : "#/definitions/MultiLanguage"
     },
     "prefecture" : {
-      "$ref" : "#/definitions/City_prefecture"
+      "$ref" : "#/definitions/CityMultiLanguage_prefecture"
     }
   }
 };
-    defs.City_prefecture = {
+    defs.CityMultiLanguage_prefecture = {
   "properties" : {
     "id" : {
       "type" : "integer"
     },
     "name" : {
-      "$ref" : "#/definitions/Multilanguage"
+      "$ref" : "#/definitions/MultiLanguage"
+    },
+    "region" : {
+      "$ref" : "#/definitions/RegionMultiLanguage"
     }
   }
 };
-    defs.Country = {
+    defs.CitySingleLanguage = {
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "integer"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "prefecture" : {
+      "$ref" : "#/definitions/CitySingleLanguage_prefecture"
+    }
+  }
+};
+    defs.CitySingleLanguage_prefecture = {
+  "properties" : {
+    "id" : {
+      "type" : "integer"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "region" : {
+      "$ref" : "#/definitions/RegionSingleLanguage"
+    }
+  }
+};
+    defs.CountryMultiLanguage = {
   "type" : "object",
   "properties" : {
     "id" : {
@@ -747,11 +777,36 @@ margin-bottom: 20px;
       "type" : "string"
     },
     "name" : {
-      "$ref" : "#/definitions/Multilanguage"
+      "$ref" : "#/definitions/MultiLanguage"
     }
   }
 };
-    defs.Multilanguage = {
+    defs.CountrySingleLanguage = {
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "integer"
+    },
+    "alpha2" : {
+      "type" : "string"
+    },
+    "alpha3" : {
+      "type" : "string"
+    },
+    "name" : {
+      "type" : "string"
+    }
+  }
+};
+    defs.ErrorMsg = {
+  "type" : "object",
+  "properties" : {
+    "error" : {
+      "type" : "string"
+    }
+  }
+};
+    defs.MultiLanguage = {
   "type" : "object",
   "properties" : {
     "el" : {
@@ -762,18 +817,29 @@ margin-bottom: 20px;
     }
   }
 };
-    defs.Region = {
+    defs.RegionMultiLanguage = {
   "type" : "object",
   "properties" : {
     "id" : {
       "type" : "integer"
     },
     "name" : {
-      "$ref" : "#/definitions/Multilanguage"
+      "$ref" : "#/definitions/MultiLanguage"
     }
   }
 };
-    defs.User = {
+    defs.RegionSingleLanguage = {
+  "type" : "object",
+  "properties" : {
+    "id" : {
+      "type" : "integer"
+    },
+    "name" : {
+      "type" : "string"
+    }
+  }
+};
+    defs.UserA = {
   "type" : "object",
   "properties" : {
     "acceptedUsageTerms" : {
@@ -783,7 +849,7 @@ margin-bottom: 20px;
       "type" : "boolean"
     },
     "bloodDonor" : {
-      "$ref" : "#/definitions/User_bloodDonor"
+      "$ref" : "#/definitions/UserA_bloodDonor"
     },
     "email" : {
       "type" : "string"
@@ -812,16 +878,13 @@ margin-bottom: 20px;
     },
     "version" : {
       "type" : "integer"
-    },
-    "name" : {
-      "type" : "string"
     }
   }
 };
-    defs.User_bloodDonor = {
+    defs.UserA_bloodDonor = {
   "properties" : {
     "data" : {
-      "$ref" : "#/definitions/User_bloodDonor_data"
+      "$ref" : "#/definitions/UserA_bloodDonor_data"
     },
     "deleted" : {
       "type" : "boolean"
@@ -837,7 +900,7 @@ margin-bottom: 20px;
     }
   }
 };
-    defs.User_bloodDonor_data = {
+    defs.UserA_bloodDonor_data = {
   "properties" : {
     "ama" : {
       "type" : "integer"
@@ -848,21 +911,21 @@ margin-bottom: 20px;
     "ast" : {
       "type" : "string"
     },
-    "birthContry" : {
-      "$ref" : "#/definitions/Country"
+    "birthCountry" : {
+      "$ref" : "#/definitions/CountryMultiLanguage"
     },
     "birthDate" : {
       "type" : "string",
       "format" : "date"
     },
     "birthRegion" : {
-      "$ref" : "#/definitions/Region"
+      "$ref" : "#/definitions/RegionMultiLanguage"
     },
     "bloodGroup" : {
       "type" : "string"
     },
     "city" : {
-      "$ref" : "#/definitions/City"
+      "$ref" : "#/definitions/CityMultiLanguage"
     },
     "education" : {
       "type" : "string"
@@ -895,13 +958,169 @@ margin-bottom: 20px;
       "type" : "string"
     },
     "ssnCountry" : {
-      "$ref" : "#/definitions/Country"
+      "$ref" : "#/definitions/CountryMultiLanguage"
     },
     "street" : {
       "type" : "string"
     },
     "streetNumber" : {
       "type" : "integer"
+    }
+  }
+};
+    defs.UserB = {
+  "type" : "object",
+  "properties" : {
+    "bloodDonor" : {
+      "$ref" : "#/definitions/UserB_bloodDonor"
+    },
+    "email" : {
+      "type" : "string"
+    },
+    "emailValid" : {
+      "type" : "boolean"
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "registrationDate" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "registrationId" : {
+      "type" : "string"
+    },
+    "status" : {
+      "type" : "string"
+    },
+    "userType" : {
+      "type" : "string"
+    },
+    "username" : {
+      "type" : "string"
+    }
+  }
+};
+    defs.UserB_bloodDonor = {
+  "properties" : {
+    "ama" : {
+      "type" : "integer"
+    },
+    "amka" : {
+      "type" : "integer"
+    },
+    "ast" : {
+      "type" : "string"
+    },
+    "birthCountry" : {
+      "$ref" : "#/definitions/CountrySingleLanguage"
+    },
+    "birthDate" : {
+      "type" : "string",
+      "format" : "date"
+    },
+    "birthRegion" : {
+      "$ref" : "#/definitions/RegionSingleLanguage"
+    },
+    "bloodGroup" : {
+      "type" : "string"
+    },
+    "city" : {
+      "$ref" : "#/definitions/CitySingleLanguage"
+    },
+    "discardedOnce" : {
+      "type" : "boolean"
+    },
+    "education" : {
+      "type" : "string"
+    },
+    "email" : {
+      "type" : "string"
+    },
+    "fathersName" : {
+      "type" : "string"
+    },
+    "firstname" : {
+      "type" : "string"
+    },
+    "gender" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "integer"
+    },
+    "idikaVerified" : {
+      "type" : "boolean"
+    },
+    "lastname" : {
+      "type" : "string"
+    },
+    "mothersName" : {
+      "type" : "string"
+    },
+    "phoneNumber" : {
+      "type" : "integer"
+    },
+    "recentVisit" : {
+      "type" : "boolean"
+    },
+    "rhesus" : {
+      "type" : "string"
+    },
+    "ssnCountry" : {
+      "$ref" : "#/definitions/CountrySingleLanguage"
+    },
+    "street" : {
+      "type" : "string"
+    },
+    "streetNumber" : {
+      "type" : "integer"
+    },
+    "verification" : {
+      "$ref" : "#/definitions/UserB_bloodDonor_verification"
+    }
+  }
+};
+    defs.UserB_bloodDonor_verification = {
+  "properties" : {
+    "aad" : {
+      "type" : "boolean"
+    },
+    "aap" : {
+      "type" : "boolean"
+    },
+    "aat" : {
+      "type" : "boolean"
+    },
+    "adb" : {
+      "type" : "boolean"
+    },
+    "adt" : {
+      "type" : "boolean"
+    },
+    "ama" : {
+      "type" : "boolean"
+    },
+    "amka" : {
+      "type" : "boolean"
+    },
+    "ast" : {
+      "type" : "boolean"
+    },
+    "birthDate" : {
+      "type" : "boolean"
+    },
+    "fathersName" : {
+      "type" : "boolean"
+    },
+    "firstname" : {
+      "type" : "boolean"
+    },
+    "lastname" : {
+      "type" : "boolean"
+    },
+    "mothersName" : {
+      "type" : "boolean"
     }
   }
 };
@@ -922,14 +1141,26 @@ margin-bottom: 20px;
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Default"><a href="#api-Default">API Methods - Default</a></li>
+                    <li data-group="Default" data-name="getCitiesList" class="">
+                      <a href="#api-Default-getCitiesList">getCitiesList</a>
+                    </li>
+                    <li data-group="Default" data-name="getCountriesList" class="">
+                      <a href="#api-Default-getCountriesList">getCountriesList</a>
+                    </li>
+                    <li data-group="Default" data-name="getDonorRequest" class="">
+                      <a href="#api-Default-getDonorRequest">getDonorRequest</a>
+                    </li>
                     <li data-group="Default" data-name="getLocale" class="">
                       <a href="#api-Default-getLocale">getLocale</a>
                     </li>
-                    <li data-group="Default" data-name="getUserData" class="">
-                      <a href="#api-Default-getUserData">getUserData</a>
+                    <li data-group="Default" data-name="getRegionsList" class="">
+                      <a href="#api-Default-getRegionsList">getRegionsList</a>
                     </li>
-                    <li data-group="Default" data-name="tba2" class="">
-                      <a href="#api-Default-tba2">tba2</a>
+                    <li data-group="Default" data-name="getUserAData" class="">
+                      <a href="#api-Default-getUserAData">getUserAData</a>
+                    </li>
+                    <li data-group="Default" data-name="getUserBData" class="">
+                      <a href="#api-Default-getUserBData">getUserBData</a>
                     </li>
           </ul>
         </nav>
@@ -952,6 +1183,1146 @@ margin-bottom: 20px;
         <div id="sections">
                 <section id="api-Default">
                   <h1>Default</h1>
+                    <div id="api-Default-getCitiesList">
+                      <article id="api-Default-getCitiesList-0" data-group="User" data-name="getCitiesList" data-version="0">
+                        <div class="pull-left">
+                          <h1>getCitiesList</h1>
+                          <p>Get the cities of a greek region</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Get a list with information about the cities of a region in the requested language.</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/blood-donor-registry-web-public/rest/blooddonor/region/cities/{regionID}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-getCitiesList-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getCitiesList-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getCitiesList-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCitiesList-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getCitiesList-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getCitiesList-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCitiesList-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getCitiesList-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getCitiesList-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getCitiesList-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getCitiesList-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-getCitiesList-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/region/cities/{regionID}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-getCitiesList-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        
+        // Configure API key authorization: token
+        ApiKeyAuth token = (ApiKeyAuth) defaultClient.getAuthentication("token");
+        token.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //token.setApiKeyPrefix("Token");
+
+        DefaultApi apiInstance = new DefaultApi();
+        String regionID = regionID_example; // String | 
+        String xLang = xLang_example; // String | Possible values: en, el
+
+        try {
+            array[CitySingleLanguage] result = apiInstance.getCitiesList(regionID, xLang);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getCitiesList");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-getCitiesList-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        String regionID = regionID_example; // String | 
+        String xLang = xLang_example; // String | Possible values: en, el
+
+        try {
+            array[CitySingleLanguage] result = apiInstance.getCitiesList(regionID, xLang);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getCitiesList");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-getCitiesList-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-getCitiesList-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: token)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-Auth-Token"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-Auth-Token"];
+
+String *regionID = regionID_example; // 
+String *xLang = xLang_example; // Possible values: en, el
+
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+// Get the cities of a greek region
+[apiInstance getCitiesListWith:regionID
+    xLang:xLang
+              completionHandler: ^(array[CitySingleLanguage] output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCitiesList-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
+var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
+
+// Configure API key authorization: token
+var token = defaultClient.authentications['token'];
+token.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//token.apiKeyPrefix['X-Auth-Token'] = "Token"
+
+var api = new BloodDonorRegistryForDonorsApplication.DefaultApi()
+
+var regionID = regionID_example; // {String} 
+
+var xLang = xLang_example; // {String} Possible values: en, el
+
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getCitiesList(regionID, xLang, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-getCitiesList-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-getCitiesList-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getCitiesListExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: token
+            Configuration.Default.ApiKey.Add("X-Auth-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("X-Auth-Token", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var regionID = regionID_example;  // String | 
+            var xLang = xLang_example;  // String | Possible values: en, el
+
+
+            try
+            {
+                // Get the cities of a greek region
+                array[CitySingleLanguage] result = apiInstance.getCitiesList(regionID, xLang);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.getCitiesList: " + e.Message );
+            }
+        }
+    }
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCitiesList-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: token
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\DefaultApi();
+$regionID = regionID_example; // String | 
+$xLang = xLang_example; // String | Possible values: en, el
+
+
+try {
+    $result = $api_instance->getCitiesList($regionID, $xLang);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getCitiesList: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCitiesList-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+# Configure API key authorization: token
+$WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
+# uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+#$WWW::SwaggerClient::Configuration::api_key_prefix->{'X-Auth-Token'} = "Bearer";
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $regionID = regionID_example; # String | 
+my $xLang = xLang_example; # String | Possible values: en, el
+
+
+eval { 
+    my $result = $api_instance->getCitiesList(regionID => $regionID, xLang => $xLang);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->getCitiesList: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCitiesList-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: token
+swagger_client.configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# swagger_client.configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+regionID = regionID_example # String | 
+xLang = xLang_example # String | Possible values: en, el
+
+
+try: 
+    # Get the cities of a greek region
+    api_response = api_instance.getCitiesList(regionID, xLang)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->getCitiesList: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">regionID*</td>
+<td>
+
+
+<script>
+												$(document).ready(function() {
+													var schemaWrapper = {
+  "name" : "regionID",
+  "in" : "path",
+  "required" : true,
+  "type" : "string"
+};
+													var schema = schemaWrapper;
+
+
+
+
+													var view = new JSONSchemaView(schema,1);
+													var result = $('#d2e199_getCitiesList_regionID');
+													result.empty();
+													result.append(view.render());
+
+
+
+
+
+												});
+												</script>
+												<div id="d2e199_getCitiesList_regionID"></div>
+</td>
+</tr>
+
+                            </table>
+
+                            <div class="methodsubtabletitle">Header parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                  <tr><td style="width:150px;">X-Lang*</td>
+<td>
+
+
+<script>
+												$(document).ready(function() {
+													var schemaWrapper = {
+  "name" : "X-Lang",
+  "in" : "header",
+  "description" : "Possible values: en, el\n",
+  "required" : true,
+  "type" : "string"
+};
+													var schema = schemaWrapper;
+
+
+
+
+													var view = new JSONSchemaView(schema,1);
+													var result = $('#d2e199_getCitiesList_xLang');
+													result.empty();
+													result.append(view.render());
+
+
+
+
+
+												});
+												</script>
+												<div id="d2e199_getCitiesList_xLang"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - OK </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getCitiesList-200-schema">Schema</a>
+                                </li>
+
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getCitiesList-200-example">Response Example</a>
+                                  </li>
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getCitiesList-200-schema">
+                                  <div id='responses-getCitiesList-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                                               <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/CitySingleLanguage"
+    }
+  },
+  "examples" : {
+    "application/json" : [ {
+      "prefecture" : {
+        "id" : "0401",
+        "name" : "ARTAS",
+        "region" : {
+          "id" : "4",
+          "name" : "IPEIROU"
+        }
+      },
+      "id" : "9073",
+      "name" : "ARTAION"
+    } ]
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        schemaWrapper.definitions = defs;
+                                        //console.log(JSON.stringify(schema))
+                                        JsonRefs.resolveRefs(schemaWrapper, {
+                                            "depth": 3,
+                                            "resolveRemoteRefs": false,
+                                            "resolveFileRefs": false
+                                        }, function(err, resolved, metadata) {
+                                          //console.log(JSON.stringify(resolved));
+                                          var view = new JSONSchemaView(resolved.schema, 3);
+                                          $('#responses-getCitiesList-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getCitiesList-200-schema-200');
+                                          result.empty();
+                                          result.append(view.render());
+                                        });
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getCitiesList-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getCitiesList-200-example">
+                                      <pre class="prettyprint"><code class="json">[{prefecture&#x3D;{id&#x3D;0401, name&#x3D;ARTAS, region&#x3D;{id&#x3D;4, name&#x3D;IPEIROU}}, id&#x3D;9073, name&#x3D;ARTAION}]</code></pre>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-getCountriesList">
+                      <article id="api-Default-getCountriesList-0" data-group="User" data-name="getCountriesList" data-version="0">
+                        <div class="pull-left">
+                          <h1>getCountriesList</h1>
+                          <p>Get id, name and codes of all countries.</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">The name of the country is in the language that the request mentions.
+
+The code of each country comes in 2 forms:
+
+- ISO 3166-1 alpha-2
+- ISO 3166-1 alpha-3
+</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/blood-donor-registry-web-public/rest/blooddonor/region/countries</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-getCountriesList-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getCountriesList-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getCountriesList-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCountriesList-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getCountriesList-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getCountriesList-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCountriesList-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getCountriesList-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getCountriesList-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getCountriesList-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getCountriesList-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-getCountriesList-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/region/countries"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-getCountriesList-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        
+        // Configure API key authorization: token
+        ApiKeyAuth token = (ApiKeyAuth) defaultClient.getAuthentication("token");
+        token.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //token.setApiKeyPrefix("Token");
+
+        DefaultApi apiInstance = new DefaultApi();
+        String xLang = xLang_example; // String | Possible values: en, el
+
+        try {
+            array[CountrySingleLanguage] result = apiInstance.getCountriesList(xLang);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getCountriesList");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-getCountriesList-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        String xLang = xLang_example; // String | Possible values: en, el
+
+        try {
+            array[CountrySingleLanguage] result = apiInstance.getCountriesList(xLang);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getCountriesList");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-getCountriesList-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-getCountriesList-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: token)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-Auth-Token"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-Auth-Token"];
+
+String *xLang = xLang_example; // Possible values: en, el
+
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+// Get id, name and codes of all countries.
+[apiInstance getCountriesListWith:xLang
+              completionHandler: ^(array[CountrySingleLanguage] output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCountriesList-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
+var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
+
+// Configure API key authorization: token
+var token = defaultClient.authentications['token'];
+token.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//token.apiKeyPrefix['X-Auth-Token'] = "Token"
+
+var api = new BloodDonorRegistryForDonorsApplication.DefaultApi()
+
+var xLang = xLang_example; // {String} Possible values: en, el
+
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getCountriesList(xLang, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-getCountriesList-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-getCountriesList-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getCountriesListExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: token
+            Configuration.Default.ApiKey.Add("X-Auth-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("X-Auth-Token", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var xLang = xLang_example;  // String | Possible values: en, el
+
+
+            try
+            {
+                // Get id, name and codes of all countries.
+                array[CountrySingleLanguage] result = apiInstance.getCountriesList(xLang);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.getCountriesList: " + e.Message );
+            }
+        }
+    }
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCountriesList-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: token
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\DefaultApi();
+$xLang = xLang_example; // String | Possible values: en, el
+
+
+try {
+    $result = $api_instance->getCountriesList($xLang);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getCountriesList: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCountriesList-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+# Configure API key authorization: token
+$WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
+# uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+#$WWW::SwaggerClient::Configuration::api_key_prefix->{'X-Auth-Token'} = "Bearer";
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $xLang = xLang_example; # String | Possible values: en, el
+
+
+eval { 
+    my $result = $api_instance->getCountriesList(xLang => $xLang);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->getCountriesList: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getCountriesList-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: token
+swagger_client.configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# swagger_client.configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+xLang = xLang_example # String | Possible values: en, el
+
+
+try: 
+    # Get id, name and codes of all countries.
+    api_response = api_instance.getCountriesList(xLang)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->getCountriesList: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+                            <div class="methodsubtabletitle">Header parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                  <tr><td style="width:150px;">X-Lang*</td>
+<td>
+
+
+<script>
+												$(document).ready(function() {
+													var schemaWrapper = {
+  "name" : "X-Lang",
+  "in" : "header",
+  "description" : "Possible values: en, el\n",
+  "required" : true,
+  "type" : "string"
+};
+													var schema = schemaWrapper;
+
+
+
+
+													var view = new JSONSchemaView(schema,1);
+													var result = $('#d2e199_getCountriesList_xLang');
+													result.empty();
+													result.append(view.render());
+
+
+
+
+
+												});
+												</script>
+												<div id="d2e199_getCountriesList_xLang"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - OK </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getCountriesList-200-schema">Schema</a>
+                                </li>
+
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getCountriesList-200-example">Response Example</a>
+                                  </li>
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getCountriesList-200-schema">
+                                  <div id='responses-getCountriesList-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                                               <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/CountrySingleLanguage"
+    }
+  },
+  "examples" : {
+    "application/json" : [ {
+      "alpha2" : "AF",
+      "alpha3" : "AFG",
+      "id" : "4",
+      "name" : "AFGHANISTAN"
+    }, {
+      "id" : "8",
+      "alpha2" : "AL",
+      "alpha3" : "ALB",
+      "name" : "ALBANIA"
+    } ]
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        schemaWrapper.definitions = defs;
+                                        //console.log(JSON.stringify(schema))
+                                        JsonRefs.resolveRefs(schemaWrapper, {
+                                            "depth": 3,
+                                            "resolveRemoteRefs": false,
+                                            "resolveFileRefs": false
+                                        }, function(err, resolved, metadata) {
+                                          //console.log(JSON.stringify(resolved));
+                                          var view = new JSONSchemaView(resolved.schema, 3);
+                                          $('#responses-getCountriesList-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getCountriesList-200-schema-200');
+                                          result.empty();
+                                          result.append(view.render());
+                                        });
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getCountriesList-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getCountriesList-200-example">
+                                      <pre class="prettyprint"><code class="json">[{alpha2&#x3D;AF, alpha3&#x3D;AFG, id&#x3D;4, name&#x3D;AFGHANISTAN}, {id&#x3D;8, alpha2&#x3D;AL, alpha3&#x3D;ALB, name&#x3D;ALBANIA}]</code></pre>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-getDonorRequest">
+                      <article id="api-Default-getDonorRequest-0" data-group="User" data-name="getDonorRequest" data-version="0">
+                        <div class="pull-left">
+                          <h1>getDonorRequest</h1>
+                          <p>TBA</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Retrieve user request</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/blood-donor-registry-web-public/rest/blooddonor/{id}/request</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-getDonorRequest-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getDonorRequest-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getDonorRequest-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getDonorRequest-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-getDonorRequest-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/{id}/request"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-getDonorRequest-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        
+        // Configure API key authorization: token
+        ApiKeyAuth token = (ApiKeyAuth) defaultClient.getAuthentication("token");
+        token.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //token.setApiKeyPrefix("Token");
+
+        DefaultApi apiInstance = new DefaultApi();
+        String id = id_example; // String | 
+        try {
+            apiInstance.getDonorRequest(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getDonorRequest");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-getDonorRequest-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        String id = id_example; // String | 
+        try {
+            apiInstance.getDonorRequest(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getDonorRequest");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-getDonorRequest-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-getDonorRequest-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: token)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-Auth-Token"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-Auth-Token"];
+
+String *id = id_example; // 
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+// TBA
+[apiInstance getDonorRequestWith:id
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getDonorRequest-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
+var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
+
+// Configure API key authorization: token
+var token = defaultClient.authentications['token'];
+token.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//token.apiKeyPrefix['X-Auth-Token'] = "Token"
+
+var api = new BloodDonorRegistryForDonorsApplication.DefaultApi()
+
+var id = id_example; // {String} 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.getDonorRequest(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-getDonorRequest-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-getDonorRequest-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getDonorRequestExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: token
+            Configuration.Default.ApiKey.Add("X-Auth-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("X-Auth-Token", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var id = id_example;  // String | 
+
+            try
+            {
+                // TBA
+                apiInstance.getDonorRequest(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.getDonorRequest: " + e.Message );
+            }
+        }
+    }
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getDonorRequest-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: token
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\DefaultApi();
+$id = id_example; // String | 
+
+try {
+    $api_instance->getDonorRequest($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getDonorRequest: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getDonorRequest-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+# Configure API key authorization: token
+$WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
+# uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+#$WWW::SwaggerClient::Configuration::api_key_prefix->{'X-Auth-Token'} = "Bearer";
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $id = id_example; # String | 
+
+eval { 
+    $api_instance->getDonorRequest(id => $id);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->getDonorRequest: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getDonorRequest-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: token
+swagger_client.configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# swagger_client.configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+id = id_example # String | 
+
+try: 
+    # TBA
+    api_instance.getDonorRequest(id)
+except ApiException as e:
+    print("Exception when calling DefaultApi->getDonorRequest: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+<td>
+
+
+<script>
+												$(document).ready(function() {
+													var schemaWrapper = {
+  "name" : "id",
+  "in" : "path",
+  "required" : true,
+  "type" : "string"
+};
+													var schema = schemaWrapper;
+
+
+
+
+													var view = new JSONSchemaView(schema,1);
+													var result = $('#d2e199_getDonorRequest_id');
+													result.empty();
+													result.append(view.render());
+
+
+
+
+
+												});
+												</script>
+												<div id="d2e199_getDonorRequest_id"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 404 - Not Found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getDonorRequest-404-schema">Schema</a>
+                                </li>
+
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getDonorRequest-404-example">Response Example</a>
+                                  </li>
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getDonorRequest-404-schema">
+                                  <div id='responses-getDonorRequest-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                                               <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Not Found",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorMsg"
+  },
+  "examples" : {
+    "application/json" : {
+      "error" : "Not Found"
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        schemaWrapper.definitions = defs;
+                                        //console.log(JSON.stringify(schema))
+                                        JsonRefs.resolveRefs(schemaWrapper, {
+                                            "depth": 3,
+                                            "resolveRemoteRefs": false,
+                                            "resolveFileRefs": false
+                                        }, function(err, resolved, metadata) {
+                                          //console.log(JSON.stringify(resolved));
+                                          var view = new JSONSchemaView(resolved.schema, 3);
+                                          $('#responses-getDonorRequest-404-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getDonorRequest-404-schema-404');
+                                          result.empty();
+                                          result.append(view.render());
+                                        });
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getDonorRequest-404-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getDonorRequest-404-example">
+                                      <pre class="prettyprint"><code class="json">{error&#x3D;Not Found}</code></pre>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
                     <div id="api-Default-getLocale">
                       <article id="api-Default-getLocale-0" data-group="User" data-name="getLocale" data-version="0">
                         <div class="pull-left">
@@ -1214,7 +2585,7 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - i18n json </h3>
+                            <h3> Status: 200 - OK </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
@@ -1229,7 +2600,7 @@ except ApiException as e:
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
-  "description" : "i18n json",
+  "description" : "OK",
   "schema" : {
     "type" : "object",
     "properties" : { }
@@ -1257,10 +2628,7 @@ except ApiException as e:
                                 </div>
                             </div>
 
-                            <h3> Status: 404 - Not found
-
-Returns html
- </h3>
+                            <h3> Status: 404 - Not found </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
@@ -1278,7 +2646,7 @@ Returns html
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
-  "description" : "Not found\n\nReturns html\n",
+  "description" : "Not found",
   "schema" : {
     "type" : "object",
     "properties" : { }
@@ -1325,10 +2693,377 @@ Returns html
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-getUserData">
-                      <article id="api-Default-getUserData-0" data-group="User" data-name="getUserData" data-version="0">
+                    <div id="api-Default-getRegionsList">
+                      <article id="api-Default-getRegionsList-0" data-group="User" data-name="getRegionsList" data-version="0">
                         <div class="pull-left">
-                          <h1>getUserData</h1>
+                          <h1>getRegionsList</h1>
+                          <p>Get id and name of all greek regions.</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">The name of the region is in the language that the request mentions.</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/blood-donor-registry-web-public/rest/blooddonor/region/regions</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-getRegionsList-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getRegionsList-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getRegionsList-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getRegionsList-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getRegionsList-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getRegionsList-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getRegionsList-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getRegionsList-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getRegionsList-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getRegionsList-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getRegionsList-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-getRegionsList-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/region/regions"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-getRegionsList-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        
+        // Configure API key authorization: token
+        ApiKeyAuth token = (ApiKeyAuth) defaultClient.getAuthentication("token");
+        token.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //token.setApiKeyPrefix("Token");
+
+        DefaultApi apiInstance = new DefaultApi();
+        String xLang = xLang_example; // String | Possible values: en, el
+
+        try {
+            array[RegionSingleLanguage] result = apiInstance.getRegionsList(xLang);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getRegionsList");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-getRegionsList-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+        String xLang = xLang_example; // String | Possible values: en, el
+
+        try {
+            array[RegionSingleLanguage] result = apiInstance.getRegionsList(xLang);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#getRegionsList");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-getRegionsList-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-getRegionsList-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: token)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-Auth-Token"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-Auth-Token"];
+
+String *xLang = xLang_example; // Possible values: en, el
+
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+// Get id and name of all greek regions.
+[apiInstance getRegionsListWith:xLang
+              completionHandler: ^(array[RegionSingleLanguage] output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getRegionsList-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
+var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
+
+// Configure API key authorization: token
+var token = defaultClient.authentications['token'];
+token.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//token.apiKeyPrefix['X-Auth-Token'] = "Token"
+
+var api = new BloodDonorRegistryForDonorsApplication.DefaultApi()
+
+var xLang = xLang_example; // {String} Possible values: en, el
+
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getRegionsList(xLang, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-getRegionsList-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-getRegionsList-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getRegionsListExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: token
+            Configuration.Default.ApiKey.Add("X-Auth-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("X-Auth-Token", "Bearer");
+
+            var apiInstance = new DefaultApi();
+            var xLang = xLang_example;  // String | Possible values: en, el
+
+
+            try
+            {
+                // Get id and name of all greek regions.
+                array[RegionSingleLanguage] result = apiInstance.getRegionsList(xLang);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.getRegionsList: " + e.Message );
+            }
+        }
+    }
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getRegionsList-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: token
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\DefaultApi();
+$xLang = xLang_example; // String | Possible values: en, el
+
+
+try {
+    $result = $api_instance->getRegionsList($xLang);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getRegionsList: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getRegionsList-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+# Configure API key authorization: token
+$WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
+# uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+#$WWW::SwaggerClient::Configuration::api_key_prefix->{'X-Auth-Token'} = "Bearer";
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $xLang = xLang_example; # String | Possible values: en, el
+
+
+eval { 
+    my $result = $api_instance->getRegionsList(xLang => $xLang);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->getRegionsList: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-getRegionsList-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: token
+swagger_client.configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# swagger_client.configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+xLang = xLang_example # String | Possible values: en, el
+
+
+try: 
+    # Get id and name of all greek regions.
+    api_response = api_instance.getRegionsList(xLang)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->getRegionsList: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+                            <div class="methodsubtabletitle">Header parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                  <tr><td style="width:150px;">X-Lang*</td>
+<td>
+
+
+<script>
+												$(document).ready(function() {
+													var schemaWrapper = {
+  "name" : "X-Lang",
+  "in" : "header",
+  "description" : "Possible values: en, el\n",
+  "required" : true,
+  "type" : "string"
+};
+													var schema = schemaWrapper;
+
+
+
+
+													var view = new JSONSchemaView(schema,1);
+													var result = $('#d2e199_getRegionsList_xLang');
+													result.empty();
+													result.append(view.render());
+
+
+
+
+
+												});
+												</script>
+												<div id="d2e199_getRegionsList_xLang"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - OK </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getRegionsList-200-schema">Schema</a>
+                                </li>
+
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getRegionsList-200-example">Response Example</a>
+                                  </li>
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getRegionsList-200-schema">
+                                  <div id='responses-getRegionsList-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                                               <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/RegionSingleLanguage"
+    }
+  },
+  "examples" : {
+    "application/json" : [ {
+      "id" : "1",
+      "name" : "AN. MAKEDONIAS & THRAKIS"
+    }, {
+      "id" : "2",
+      "name" : "KENTRIKIS MAKEDONIAS"
+    } ]
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        schemaWrapper.definitions = defs;
+                                        //console.log(JSON.stringify(schema))
+                                        JsonRefs.resolveRefs(schemaWrapper, {
+                                            "depth": 3,
+                                            "resolveRemoteRefs": false,
+                                            "resolveFileRefs": false
+                                        }, function(err, resolved, metadata) {
+                                          //console.log(JSON.stringify(resolved));
+                                          var view = new JSONSchemaView(resolved.schema, 3);
+                                          $('#responses-getRegionsList-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getRegionsList-200-schema-200');
+                                          result.empty();
+                                          result.append(view.render());
+                                        });
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getRegionsList-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getRegionsList-200-example">
+                                      <pre class="prettyprint"><code class="json">[{id&#x3D;1, name&#x3D;AN. MAKEDONIAS &amp; THRAKIS}, {id&#x3D;2, name&#x3D;KENTRIKIS MAKEDONIAS}]</code></pre>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-getUserAData">
+                      <article id="api-Default-getUserAData-0" data-group="User" data-name="getUserAData" data-version="0">
+                        <div class="pull-left">
+                          <h1>getUserAData</h1>
                           <p>Retrieve user data</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1344,24 +3079,24 @@ Login required.
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-getUserData-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-getUserData-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-getUserData-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-getUserData-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-getUserData-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-getUserData-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-getUserData-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-getUserData-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-getUserData-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-getUserData-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-getUserData-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getUserAData-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getUserAData-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getUserAData-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserAData-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserAData-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getUserAData-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserAData-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserAData-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getUserAData-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getUserAData-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getUserAData-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-getUserData-0-curl">
+                          <div class="tab-pane active" id="examples-Default-getUserAData-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/authentication/logged-on"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-getUserData-0-java">
+                          <div class="tab-pane" id="examples-Default-getUserAData-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1383,17 +3118,17 @@ public class DefaultApiExample {
 
         DefaultApi apiInstance = new DefaultApi();
         try {
-            User result = apiInstance.getUserData();
+            UserA result = apiInstance.getUserAData();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getUserData");
+            System.err.println("Exception when calling DefaultApi#getUserAData");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-getUserData-0-android">
+                          <div class="tab-pane" id="examples-Default-getUserAData-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -1401,20 +3136,20 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            User result = apiInstance.getUserData();
+            UserA result = apiInstance.getUserAData();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getUserData");
+            System.err.println("Exception when calling DefaultApi#getUserAData");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-getUserData-0-groovy">
+  <div class="tab-pane" id="examples-Default-getUserAData-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-getUserData-0-objc">
+                            <div class="tab-pane" id="examples-Default-getUserAData-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 
 // Configure API key authorization: (authentication scheme: token)
@@ -1426,8 +3161,8 @@ public class DefaultApiExample {
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Retrieve user data
-[apiInstance getUserDataWithCompletionHandler: 
-              ^(User output, NSError* error) {
+[apiInstance getUserADataWithCompletionHandler: 
+              ^(UserA output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -1438,7 +3173,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserData-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getUserAData-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
 var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
 
@@ -1457,14 +3192,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getUserData(callback);
+api.getUserAData(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-getUserData-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getUserAData-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-getUserData-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getUserAData-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1473,7 +3208,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getUserDataExample
+    public class getUserADataExample
     {
         public void main()
         {
@@ -1488,19 +3223,19 @@ namespace Example
             try
             {
                 // Retrieve user data
-                User result = apiInstance.getUserData();
+                UserA result = apiInstance.getUserAData();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.getUserData: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getUserAData: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserData-0-php">
+                            <div class="tab-pane" id="examples-Default-getUserAData-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1512,15 +3247,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token
 $api_instance = new Swagger\Client\Api\DefaultApi();
 
 try {
-    $result = $api_instance->getUserData();
+    $result = $api_instance->getUserAData();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getUserData: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getUserAData: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserData-0-perl">
+                            <div class="tab-pane" id="examples-Default-getUserAData-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -1533,15 +3268,15 @@ $WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    my $result = $api_instance->getUserData();
+    my $result = $api_instance->getUserAData();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->getUserData: $@\n";
+    warn "Exception when calling DefaultApi->getUserAData: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserData-0-python">
+                            <div class="tab-pane" id="examples-Default-getUserAData-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1558,10 +3293,10 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # Retrieve user data
-    api_response = api_instance.getUserData()
+    api_response = api_instance.getUserAData()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->getUserData: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getUserAData: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1573,60 +3308,60 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - Retrieve user data </h3>
+                            <h3> Status: 200 - OK </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getUserData-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getUserAData-200-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getUserData-200-schema">
-                                  <div id='responses-getUserData-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getUserAData-200-schema">
+                                  <div id='responses-getUserAData-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
-  "description" : "Retrieve user data",
+  "description" : "OK",
   "schema" : {
-    "$ref" : "#/definitions/User"
+    "$ref" : "#/definitions/UserA"
   },
   "examples" : {
     "acceptedUsageTerms" : true,
@@ -1723,50 +3458,50 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getUserData-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getUserData-200-schema-200');
+                                          $('#responses-getUserAData-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserAData-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getUserData-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getUserAData-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">{data&#x3D;{ama&#x3D;1600791400, amka&#x3D;23038901379, ast&#x3D;Γ, birthCountry&#x3D;{alpha2&#x3D;GR, alpha3&#x3D;GRC, id&#x3D;300, name&#x3D;{el&#x3D;ΕΛΛΑΔΑ, en&#x3D;GREECE}}, birthDate&#x3D;1989-03-23, birthRegion&#x3D;{id&#x3D;11, name&#x3D;{el&#x3D;ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ, en&#x3D;VOREIOU AIGAIOU}}, bloodGroup&#x3D;A, city&#x3D;{id&#x3D;9088, name&#x3D;{el&#x3D;ΖΗΡΟΥ, en&#x3D;ZIROU}, prefecture&#x3D;{id&#x3D;0404, name&#x3D;{el&#x3D;ΠΡΕΒΕΖΑΣ, en&#x3D;PREVEZAS}, region&#x3D;{id&#x3D;4, name&#x3D;{el&#x3D;ΗΠΕΙΡΟΥ, en&#x3D;IPEIROU}}}}, education&#x3D;LEVEL7, email&#x3D;papadakis@example.com, fathersName&#x3D;ΓΕΩΡΓΙΟΣ, firstname&#x3D;ΙΩΑΝΝΗΣ, gender&#x3D;MALE, imported&#x3D;false, lastname&#x3D;ΠΑΠΑΔΑΚΗΣ, mothersName&#x3D;ΙΟΥΛΙΑ, phoneNumber&#x3D;2152157865, rhesus&#x3D;NEGATIVE, ssnCountry&#x3D;{alpha2&#x3D;GR, alpha3&#x3D;GRC, id&#x3D;300, name&#x3D;{el&#x3D;ΕΛΛΑΔΑ, en&#x3D;GREECE}}, street&#x3D;ΓΚΑΝΤΕΜΗ, streetNumber&#x3D;13}, deleted&#x3D;false, duplicate&#x3D;false, id&#x3D;87588, idikaVerified&#x3D;true}</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">papadakis@example.com</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">8616993</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">2016-06-23T13:03:47.308+0000</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">ACTIVE</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">BloodDonorUser</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">papadakis</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserData-200-example">
+                                  <div class="tab-pane" id="responses-getUserAData-200-example">
                                       <pre class="prettyprint"><code class="json">4</code></pre>
                                 </div>
                             </div>
@@ -1774,41 +3509,41 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-tba2">
-                      <article id="api-Default-tba2-0" data-group="User" data-name="tba2" data-version="0">
+                    <div id="api-Default-getUserBData">
+                      <article id="api-Default-getUserBData-0" data-group="User" data-name="getUserBData" data-version="0">
                         <div class="pull-left">
-                          <h1>tba2</h1>
-                          <p>tba</p>
+                          <h1>getUserBData</h1>
+                          <p>TBA</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">tba</p>
+                        <p class="marked">Retrieve user data</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/blood-donor-registry-web-public/rest/blooddonor/{donorID}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/blood-donor-registry-web-public/rest/blooddonor/{id}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-tba2-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-tba2-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-tba2-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-tba2-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-tba2-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-tba2-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-tba2-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-tba2-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-tba2-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-tba2-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-tba2-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getUserBData-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getUserBData-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getUserBData-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserBData-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserBData-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getUserBData-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserBData-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserBData-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getUserBData-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getUserBData-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getUserBData-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-tba2-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/{donorID}"</code></pre>
+                          <div class="tab-pane active" id="examples-Default-getUserBData-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/{id}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-tba2-0-java">
+                          <div class="tab-pane" id="examples-Default-getUserBData-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1820,50 +3555,64 @@ import java.util.*;
 public class DefaultApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
         
+        // Configure API key authorization: token
+        ApiKeyAuth token = (ApiKeyAuth) defaultClient.getAuthentication("token");
+        token.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //token.setApiKeyPrefix("Token");
+
         DefaultApi apiInstance = new DefaultApi();
-        String donorID = donorID_example; // String | 
+        String id = id_example; // String | 
         try {
-            Object result = apiInstance.tba2(donorID);
+            UserB result = apiInstance.getUserBData(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#tba2");
+            System.err.println("Exception when calling DefaultApi#getUserBData");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-tba2-0-android">
+                          <div class="tab-pane" id="examples-Default-getUserBData-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
 
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
-        String donorID = donorID_example; // String | 
+        String id = id_example; // String | 
         try {
-            Object result = apiInstance.tba2(donorID);
+            UserB result = apiInstance.getUserBData(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#tba2");
+            System.err.println("Exception when calling DefaultApi#getUserBData");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-tba2-0-groovy">
+  <div class="tab-pane" id="examples-Default-getUserBData-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-tba2-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *donorID = donorID_example; // 
+                            <div class="tab-pane" id="examples-Default-getUserBData-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: token)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"X-Auth-Token"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"X-Auth-Token"];
+
+String *id = id_example; // 
 
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
-// tba
-[apiInstance tba2With:donorID
-              completionHandler: ^(Object output, NSError* error) {
+// TBA
+[apiInstance getUserBDataWith:id
+              completionHandler: ^(UserB output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -1874,12 +3623,19 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-tba2-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getUserBData-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
+var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
+
+// Configure API key authorization: token
+var token = defaultClient.authentications['token'];
+token.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//token.apiKeyPrefix['X-Auth-Token'] = "Token"
 
 var api = new BloodDonorRegistryForDonorsApplication.DefaultApi()
 
-var donorID = donorID_example; // {String} 
+var id = id_example; // {String} 
 
 
 var callback = function(error, data, response) {
@@ -1889,14 +3645,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.tba2(donorID, callback);
+api.getUserBData(id, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-tba2-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getUserBData-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-tba2-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getUserBData-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1905,79 +3661,99 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class tba2Example
+    public class getUserBDataExample
     {
         public void main()
         {
             
+            // Configure API key authorization: token
+            Configuration.Default.ApiKey.Add("X-Auth-Token", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("X-Auth-Token", "Bearer");
+
             var apiInstance = new DefaultApi();
-            var donorID = donorID_example;  // String | 
+            var id = id_example;  // String | 
 
             try
             {
-                // tba
-                Object result = apiInstance.tba2(donorID);
+                // TBA
+                UserB result = apiInstance.getUserBData(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.tba2: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getUserBData: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-tba2-0-php">
+                            <div class="tab-pane" id="examples-Default-getUserBData-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: token
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+
 $api_instance = new Swagger\Client\Api\DefaultApi();
-$donorID = donorID_example; // String | 
+$id = id_example; // String | 
 
 try {
-    $result = $api_instance->tba2($donorID);
+    $result = $api_instance->getUserBData($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->tba2: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getUserBData: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-tba2-0-perl">
+                            <div class="tab-pane" id="examples-Default-getUserBData-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
 
+# Configure API key authorization: token
+$WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
+# uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+#$WWW::SwaggerClient::Configuration::api_key_prefix->{'X-Auth-Token'} = "Bearer";
+
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
-my $donorID = donorID_example; # String | 
+my $id = id_example; # String | 
 
 eval { 
-    my $result = $api_instance->tba2(donorID => $donorID);
+    my $result = $api_instance->getUserBData(id => $id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->tba2: $@\n";
+    warn "Exception when calling DefaultApi->getUserBData: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-tba2-0-python">
+                            <div class="tab-pane" id="examples-Default-getUserBData-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: token
+swagger_client.configuration.api_key['X-Auth-Token'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# swagger_client.configuration.api_key_prefix['X-Auth-Token'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi()
-donorID = donorID_example # String | 
+id = id_example # String | 
 
 try: 
-    # tba
-    api_response = api_instance.tba2(donorID)
+    # TBA
+    api_response = api_instance.getUserBData(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->tba2: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getUserBData: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1989,14 +3765,14 @@ except ApiException as e:
                                   <th width="150px">Name</th>
                                   <th>Description</th>
                                 </tr>
-                                  <tr><td style="width:150px;">donorID*</td>
+                                  <tr><td style="width:150px;">id*</td>
 <td>
 
 
 <script>
 												$(document).ready(function() {
 													var schemaWrapper = {
-  "name" : "donorID",
+  "name" : "id",
   "in" : "path",
   "required" : true,
   "type" : "string"
@@ -2007,7 +3783,7 @@ except ApiException as e:
 
 
 													var view = new JSONSchemaView(schema,1);
-													var result = $('#d2e199_tba2_donorID');
+													var result = $('#d2e199_getUserBData_id');
 													result.empty();
 													result.append(view.render());
 
@@ -2017,7 +3793,7 @@ except ApiException as e:
 
 												});
 												</script>
-												<div id="d2e199_tba2_donorID"></div>
+												<div id="d2e199_getUserBData_id"></div>
 </td>
 </tr>
 
@@ -2028,25 +3804,126 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - tba </h3>
+                            <h3> Status: 200 - OK </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-tba2-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getUserBData-200-schema">Schema</a>
                                 </li>
 
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                  </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-tba2-200-schema">
-                                  <div id='responses-tba2-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getUserBData-200-schema">
+                                  <div id='responses-getUserBData-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
-  "description" : "tba",
+  "description" : "OK",
   "schema" : {
-    "type" : "object",
-    "properties" : { }
+    "$ref" : "#/definitions/UserB"
+  },
+  "examples" : {
+    "bloodDonor" : {
+      "id" : 87588,
+      "city" : {
+        "prefecture" : {
+          "id" : "0404",
+          "name" : "ΠΡΕΒΕΖΑΣ",
+          "region" : {
+            "id" : "4",
+            "name" : "ΗΠΕΙΡΟΥ"
+          }
+        },
+        "id" : "9088",
+        "name" : "ΖΗΡΟΥ"
+      },
+      "verification" : {
+        "ama" : false,
+        "adt" : false,
+        "ast" : false,
+        "adb" : false,
+        "amka" : false,
+        "aad" : false,
+        "aat" : false,
+        "aap" : false,
+        "firstname" : false,
+        "lastname" : false,
+        "fathersName" : false,
+        "mothersName" : false,
+        "birthDate" : false
+      },
+      "birthCountry" : {
+        "id" : "300",
+        "alpha2" : "GR",
+        "alpha3" : "GRC",
+        "name" : "ΕΛΛΑΔΑ"
+      },
+      "birthRegion" : {
+        "id" : "11",
+        "name" : "ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ"
+      },
+      "discardedOnce" : false,
+      "recentVisit" : false,
+      "idikaVerified" : true,
+      "ssnCountry" : {
+        "id" : "300",
+        "alpha2" : "GR",
+        "alpha3" : "GRC",
+        "name" : "ΕΛΛΑΔΑ"
+      },
+      "firstname" : "ΙΩΑΝΝΗΣ",
+      "lastname" : "ΠΑΠΑΔΑΚΗΣ",
+      "ast" : "Γ",
+      "education" : "LEVEL7",
+      "street" : "ΜΕΣΟΓΕΙΩΝ",
+      "streetNumber" : "13",
+      "phoneNumber" : "2152157865",
+      "email" : "papadakis@example.com",
+      "ama" : "1600791400",
+      "bloodGroup" : "A",
+      "rhesus" : "NEGATIVE",
+      "fathersName" : "ΓΕΩΡΓΙΟΣ",
+      "mothersName" : "ΙΟΥΛΙΑ",
+      "amka" : "23038901379",
+      "gender" : "MALE",
+      "birthDate" : "1989-03-23"
+    },
+    "id" : 8616993,
+    "username" : "papadakis",
+    "email" : "papadakis@example.com",
+    "status" : "ACTIVE",
+    "userType" : "BloodDonorUser",
+    "emailValid" : true,
+    "registrationDate" : "2016-06-23T13:03:47.308+0000",
+    "registrationId" : "CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc"
   }
 };
                                         var schema = schemaWrapper.schema;
@@ -2059,15 +3936,154 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-tba2-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-tba2-200-schema-200');
+                                          $('#responses-getUserBData-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserBData-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-tba2-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getUserBData-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">{id&#x3D;87588, city&#x3D;{prefecture&#x3D;{id&#x3D;0404, name&#x3D;ΠΡΕΒΕΖΑΣ, region&#x3D;{id&#x3D;4, name&#x3D;ΗΠΕΙΡΟΥ}}, id&#x3D;9088, name&#x3D;ΖΗΡΟΥ}, verification&#x3D;{ama&#x3D;false, adt&#x3D;false, ast&#x3D;false, adb&#x3D;false, amka&#x3D;false, aad&#x3D;false, aat&#x3D;false, aap&#x3D;false, firstname&#x3D;false, lastname&#x3D;false, fathersName&#x3D;false, mothersName&#x3D;false, birthDate&#x3D;false}, birthCountry&#x3D;{id&#x3D;300, alpha2&#x3D;GR, alpha3&#x3D;GRC, name&#x3D;ΕΛΛΑΔΑ}, birthRegion&#x3D;{id&#x3D;11, name&#x3D;ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ}, discardedOnce&#x3D;false, recentVisit&#x3D;false, idikaVerified&#x3D;true, ssnCountry&#x3D;{id&#x3D;300, alpha2&#x3D;GR, alpha3&#x3D;GRC, name&#x3D;ΕΛΛΑΔΑ}, firstname&#x3D;ΙΩΑΝΝΗΣ, lastname&#x3D;ΠΑΠΑΔΑΚΗΣ, ast&#x3D;Γ, education&#x3D;LEVEL7, street&#x3D;ΜΕΣΟΓΕΙΩΝ, streetNumber&#x3D;13, phoneNumber&#x3D;2152157865, email&#x3D;papadakis@example.com, ama&#x3D;1600791400, bloodGroup&#x3D;A, rhesus&#x3D;NEGATIVE, fathersName&#x3D;ΓΕΩΡΓΙΟΣ, mothersName&#x3D;ΙΟΥΛΙΑ, amka&#x3D;23038901379, gender&#x3D;MALE, birthDate&#x3D;1989-03-23}</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">8616993</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">papadakis</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">papadakis@example.com</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">ACTIVE</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">BloodDonorUser</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">true</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">2016-06-23T13:03:47.308+0000</code></pre>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                      <pre class="prettyprint"><code class="json">CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc</code></pre>
+                                </div>
+                            </div>
+
+                            <h3> Status: 401 - Unauthorized.
+
+When the ID is valid but the logged in user has no permission to get its data.
+ </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getUserBData-401-schema">Schema</a>
+                                </li>
+
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-401-example">Response Example</a>
+                                  </li>
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getUserBData-401-schema">
+                                  <div id='responses-getUserBData-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                                               <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Unauthorized.\n\nWhen the ID is valid but the logged in user has no permission to get its data.\n",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorMsg"
+  },
+  "examples" : {
+    "application/json" : {
+      "error" : "Not Allowed"
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        schemaWrapper.definitions = defs;
+                                        //console.log(JSON.stringify(schema))
+                                        JsonRefs.resolveRefs(schemaWrapper, {
+                                            "depth": 3,
+                                            "resolveRemoteRefs": false,
+                                            "resolveFileRefs": false
+                                        }, function(err, resolved, metadata) {
+                                          //console.log(JSON.stringify(resolved));
+                                          var view = new JSONSchemaView(resolved.schema, 3);
+                                          $('#responses-getUserBData-401-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserBData-401-schema-401');
+                                          result.empty();
+                                          result.append(view.render());
+                                        });
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getUserBData-401-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-401-example">
+                                      <pre class="prettyprint"><code class="json">{error&#x3D;Not Allowed}</code></pre>
+                                </div>
+                            </div>
+
+                            <h3> Status: 404 - Not found.
+
+When there is no blood donor with the current ID or no ID has been sent.
+ </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getUserBData-404-schema">Schema</a>
+                                </li>
+
+                                  <li class="">
+                                    <a data-toggle="tab" href="#responses-getUserBData-404-example">Response Example</a>
+                                  </li>
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getUserBData-404-schema">
+                                  <div id='responses-getUserBData-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                                               <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Not found.\n\nWhen there is no blood donor with the current ID or no ID has been sent.\n",
+  "schema" : {
+    "$ref" : "#/definitions/ErrorMsg"
+  },
+  "examples" : {
+    "application/json" : {
+      "error" : "Not Found"
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        schemaWrapper.definitions = defs;
+                                        //console.log(JSON.stringify(schema))
+                                        JsonRefs.resolveRefs(schemaWrapper, {
+                                            "depth": 3,
+                                            "resolveRemoteRefs": false,
+                                            "resolveFileRefs": false
+                                        }, function(err, resolved, metadata) {
+                                          //console.log(JSON.stringify(resolved));
+                                          var view = new JSONSchemaView(resolved.schema, 3);
+                                          $('#responses-getUserBData-404-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserBData-404-schema-404');
+                                          result.empty();
+                                          result.append(view.render());
+                                        });
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getUserBData-404-schema-data' type='hidden' value=''></input>
+                                </div>
+                                  <div class="tab-pane" id="responses-getUserBData-404-example">
+                                      <pre class="prettyprint"><code class="json">{error&#x3D;Not Found}</code></pre>
                                 </div>
                             </div>
 
@@ -2088,7 +4104,7 @@ except ApiException as e:
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2017-04-07T07:53:32.954Z
+              Generated 2017-04-07T14:39:34.382Z
             </div>
           </div>
       </div>
