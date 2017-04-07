@@ -355,16 +355,16 @@ paths:
             application/json:
               [
                 {
-                  alpha2:"AF",
-                  alpha3:"AFG",
-                  id:"4",
-                  name:"AFGHANISTAN"
+                  "alpha2":"AF",
+                  "alpha3":"AFG",
+                  "id":"4",
+                  "name":"AFGHANISTAN"
                 },
                 {
-                  id:"8",
-                  alpha2:"AL",
-                  alpha3:"ALB",
-                  name:"ALBANIA"
+                  "id":"8",
+                  "alpha2":"AL",
+                  "alpha3":"ALB",
+                  "name":"ALBANIA"
                 }
               ]
 
@@ -389,7 +389,6 @@ paths:
         required: true
         description: |
           Possible values: en, el
-
       responses:
         200:
           description: OK
@@ -401,15 +400,63 @@ paths:
             application/json:
               [
                 {
-                  id:"1",
-                  name:"AN. MAKEDONIAS & THRAKIS"
+                  "id":"1",
+                  "name":"AN. MAKEDONIAS & THRAKIS"
                 },
                 {
-                  id:"2",
-                  name:"KENTRIKIS MAKEDONIAS"
+                  "id":"2",
+                  "name":"KENTRIKIS MAKEDONIAS"
                 }
               ]
 
+  /blood-donor-registry-web-public/rest/blooddonor/region/cities/{regionID}:
+    get:
+      summary: Get the cities of a greek region
+
+
+      description: Get a list with information about the cities of a region in the requested language.
+      operationId: GetCitiesList
+      consumes:
+        - application/json
+        - text/plain
+      produces:
+        - application/json
+      security:
+        - token: [ ]
+      parameters:
+      - name: regionID
+        in: path
+        type: string
+        required: true
+      - name: 'X-Lang'
+        in: header
+        type: string
+        required: true
+        description: |
+          Possible values: en, el
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/CitySingleLanguage"
+          examples:
+            application/json:
+              [
+                {
+                  "prefecture": {
+                    "id":"0401",
+                    "name":"ARTAS",
+                    "region": {
+                      "id":"4",
+                      "name":"IPEIROU"
+                    }
+                  },
+                  "id":"9073",
+                  "name":"ARTAION"
+                }
+              ]
 
 securityDefinitions:
   token:
