@@ -1141,11 +1141,11 @@ margin-bottom: 20px;
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Default"><a href="#api-Default">API Methods - Default</a></li>
-                    <li data-group="Default" data-name="getCitiesList" class="">
-                      <a href="#api-Default-getCitiesList">getCitiesList</a>
+                    <li data-group="Default" data-name="getCities" class="">
+                      <a href="#api-Default-getCities">getCities</a>
                     </li>
-                    <li data-group="Default" data-name="getCountriesList" class="">
-                      <a href="#api-Default-getCountriesList">getCountriesList</a>
+                    <li data-group="Default" data-name="getCountries" class="">
+                      <a href="#api-Default-getCountries">getCountries</a>
                     </li>
                     <li data-group="Default" data-name="getDonorRequest" class="">
                       <a href="#api-Default-getDonorRequest">getDonorRequest</a>
@@ -1153,14 +1153,14 @@ margin-bottom: 20px;
                     <li data-group="Default" data-name="getLocale" class="">
                       <a href="#api-Default-getLocale">getLocale</a>
                     </li>
-                    <li data-group="Default" data-name="getRegionsList" class="">
-                      <a href="#api-Default-getRegionsList">getRegionsList</a>
+                    <li data-group="Default" data-name="getRegions" class="">
+                      <a href="#api-Default-getRegions">getRegions</a>
                     </li>
-                    <li data-group="Default" data-name="getUserAData" class="">
-                      <a href="#api-Default-getUserAData">getUserAData</a>
+                    <li data-group="Default" data-name="getUserA" class="">
+                      <a href="#api-Default-getUserA">getUserA</a>
                     </li>
-                    <li data-group="Default" data-name="getUserBData" class="">
-                      <a href="#api-Default-getUserBData">getUserBData</a>
+                    <li data-group="Default" data-name="getUserB" class="">
+                      <a href="#api-Default-getUserB">getUserB</a>
                     </li>
           </ul>
         </nav>
@@ -1183,10 +1183,10 @@ margin-bottom: 20px;
         <div id="sections">
                 <section id="api-Default">
                   <h1>Default</h1>
-                    <div id="api-Default-getCitiesList">
-                      <article id="api-Default-getCitiesList-0" data-group="User" data-name="getCitiesList" data-version="0">
+                    <div id="api-Default-getCities">
+                      <article id="api-Default-getCities-0" data-group="User" data-name="getCities" data-version="0">
                         <div class="pull-left">
-                          <h1>getCitiesList</h1>
+                          <h1>getCities</h1>
                           <p>Get the cities of a greek region</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1200,24 +1200,24 @@ margin-bottom: 20px;
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-getCitiesList-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-getCitiesList-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-getCitiesList-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-getCitiesList-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-getCitiesList-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-getCitiesList-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-getCitiesList-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-getCitiesList-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-getCitiesList-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-getCitiesList-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-getCitiesList-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getCities-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getCities-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getCities-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCities-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getCities-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getCities-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCities-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getCities-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getCities-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getCities-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getCities-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-getCitiesList-0-curl">
+                          <div class="tab-pane active" id="examples-Default-getCities-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/region/cities/{regionID}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-getCitiesList-0-java">
+                          <div class="tab-pane" id="examples-Default-getCities-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1242,17 +1242,17 @@ public class DefaultApiExample {
         String xLang = xLang_example; // String | Possible values: en, el
 
         try {
-            array[CitySingleLanguage] result = apiInstance.getCitiesList(regionID, xLang);
+            array[CitySingleLanguage] result = apiInstance.getCities(regionID, xLang);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getCitiesList");
+            System.err.println("Exception when calling DefaultApi#getCities");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-getCitiesList-0-android">
+                          <div class="tab-pane" id="examples-Default-getCities-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -1263,20 +1263,20 @@ public class DefaultApiExample {
         String xLang = xLang_example; // String | Possible values: en, el
 
         try {
-            array[CitySingleLanguage] result = apiInstance.getCitiesList(regionID, xLang);
+            array[CitySingleLanguage] result = apiInstance.getCities(regionID, xLang);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getCitiesList");
+            System.err.println("Exception when calling DefaultApi#getCities");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-getCitiesList-0-groovy">
+  <div class="tab-pane" id="examples-Default-getCities-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-getCitiesList-0-objc">
+                            <div class="tab-pane" id="examples-Default-getCities-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 
 // Configure API key authorization: (authentication scheme: token)
@@ -1291,7 +1291,7 @@ String *xLang = xLang_example; // Possible values: en, el
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Get the cities of a greek region
-[apiInstance getCitiesListWith:regionID
+[apiInstance getCitiesWith:regionID
     xLang:xLang
               completionHandler: ^(array[CitySingleLanguage] output, NSError* error) {
                             if (output) {
@@ -1304,7 +1304,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCitiesList-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getCities-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
 var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
 
@@ -1329,14 +1329,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getCitiesList(regionID, xLang, callback);
+api.getCities(regionID, xLang, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-getCitiesList-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getCities-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-getCitiesList-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getCities-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1345,7 +1345,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getCitiesListExample
+    public class getCitiesExample
     {
         public void main()
         {
@@ -1363,19 +1363,19 @@ namespace Example
             try
             {
                 // Get the cities of a greek region
-                array[CitySingleLanguage] result = apiInstance.getCitiesList(regionID, xLang);
+                array[CitySingleLanguage] result = apiInstance.getCities(regionID, xLang);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.getCitiesList: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getCities: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCitiesList-0-php">
+                            <div class="tab-pane" id="examples-Default-getCities-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1390,15 +1390,15 @@ $xLang = xLang_example; // String | Possible values: en, el
 
 
 try {
-    $result = $api_instance->getCitiesList($regionID, $xLang);
+    $result = $api_instance->getCities($regionID, $xLang);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getCitiesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getCities: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCitiesList-0-perl">
+                            <div class="tab-pane" id="examples-Default-getCities-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -1414,15 +1414,15 @@ my $xLang = xLang_example; # String | Possible values: en, el
 
 
 eval { 
-    my $result = $api_instance->getCitiesList(regionID => $regionID, xLang => $xLang);
+    my $result = $api_instance->getCities(regionID => $regionID, xLang => $xLang);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->getCitiesList: $@\n";
+    warn "Exception when calling DefaultApi->getCities: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCitiesList-0-python">
+                            <div class="tab-pane" id="examples-Default-getCities-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1442,10 +1442,10 @@ xLang = xLang_example # String | Possible values: en, el
 
 try: 
     # Get the cities of a greek region
-    api_response = api_instance.getCitiesList(regionID, xLang)
+    api_response = api_instance.getCities(regionID, xLang)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->getCitiesList: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getCities: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1475,7 +1475,7 @@ except ApiException as e:
 
 
 													var view = new JSONSchemaView(schema,1);
-													var result = $('#d2e199_getCitiesList_regionID');
+													var result = $('#d2e199_getCities_regionID');
 													result.empty();
 													result.append(view.render());
 
@@ -1485,7 +1485,7 @@ except ApiException as e:
 
 												});
 												</script>
-												<div id="d2e199_getCitiesList_regionID"></div>
+												<div id="d2e199_getCities_regionID"></div>
 </td>
 </tr>
 
@@ -1516,7 +1516,7 @@ except ApiException as e:
 
 
 													var view = new JSONSchemaView(schema,1);
-													var result = $('#d2e199_getCitiesList_xLang');
+													var result = $('#d2e199_getCities_xLang');
 													result.empty();
 													result.append(view.render());
 
@@ -1526,7 +1526,7 @@ except ApiException as e:
 
 												});
 												</script>
-												<div id="d2e199_getCitiesList_xLang"></div>
+												<div id="d2e199_getCities_xLang"></div>
 </td>
 </tr>
 
@@ -1540,17 +1540,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getCitiesList-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getCities-200-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getCitiesList-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getCities-200-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getCitiesList-200-schema">
-                                  <div id='responses-getCitiesList-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getCities-200-schema">
+                                  <div id='responses-getCities-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1586,17 +1586,17 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getCitiesList-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getCitiesList-200-schema-200');
+                                          $('#responses-getCities-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getCities-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getCitiesList-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getCities-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getCitiesList-200-example">
+                                  <div class="tab-pane" id="responses-getCities-200-example">
                                       <pre class="prettyprint"><code class="json">[{prefecture&#x3D;{id&#x3D;0401, name&#x3D;ARTAS, region&#x3D;{id&#x3D;4, name&#x3D;IPEIROU}}, id&#x3D;9073, name&#x3D;ARTAION}]</code></pre>
                                 </div>
                             </div>
@@ -1604,10 +1604,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-getCountriesList">
-                      <article id="api-Default-getCountriesList-0" data-group="User" data-name="getCountriesList" data-version="0">
+                    <div id="api-Default-getCountries">
+                      <article id="api-Default-getCountries-0" data-group="User" data-name="getCountries" data-version="0">
                         <div class="pull-left">
-                          <h1>getCountriesList</h1>
+                          <h1>getCountries</h1>
                           <p>Get id, name and codes of all countries.</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1627,24 +1627,24 @@ The code of each country comes in 2 forms:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-getCountriesList-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-getCountriesList-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-getCountriesList-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-getCountriesList-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-getCountriesList-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-getCountriesList-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-getCountriesList-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-getCountriesList-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-getCountriesList-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-getCountriesList-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-getCountriesList-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getCountries-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getCountries-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getCountries-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCountries-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getCountries-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getCountries-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getCountries-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getCountries-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getCountries-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getCountries-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getCountries-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-getCountriesList-0-curl">
+                          <div class="tab-pane active" id="examples-Default-getCountries-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/region/countries"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-getCountriesList-0-java">
+                          <div class="tab-pane" id="examples-Default-getCountries-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1668,17 +1668,17 @@ public class DefaultApiExample {
         String xLang = xLang_example; // String | Possible values: en, el
 
         try {
-            array[CountrySingleLanguage] result = apiInstance.getCountriesList(xLang);
+            array[CountrySingleLanguage] result = apiInstance.getCountries(xLang);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getCountriesList");
+            System.err.println("Exception when calling DefaultApi#getCountries");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-getCountriesList-0-android">
+                          <div class="tab-pane" id="examples-Default-getCountries-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -1688,20 +1688,20 @@ public class DefaultApiExample {
         String xLang = xLang_example; // String | Possible values: en, el
 
         try {
-            array[CountrySingleLanguage] result = apiInstance.getCountriesList(xLang);
+            array[CountrySingleLanguage] result = apiInstance.getCountries(xLang);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getCountriesList");
+            System.err.println("Exception when calling DefaultApi#getCountries");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-getCountriesList-0-groovy">
+  <div class="tab-pane" id="examples-Default-getCountries-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-getCountriesList-0-objc">
+                            <div class="tab-pane" id="examples-Default-getCountries-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 
 // Configure API key authorization: (authentication scheme: token)
@@ -1715,7 +1715,7 @@ String *xLang = xLang_example; // Possible values: en, el
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Get id, name and codes of all countries.
-[apiInstance getCountriesListWith:xLang
+[apiInstance getCountriesWith:xLang
               completionHandler: ^(array[CountrySingleLanguage] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1727,7 +1727,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCountriesList-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getCountries-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
 var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
 
@@ -1750,14 +1750,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getCountriesList(xLang, callback);
+api.getCountries(xLang, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-getCountriesList-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getCountries-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-getCountriesList-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getCountries-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1766,7 +1766,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getCountriesListExample
+    public class getCountriesExample
     {
         public void main()
         {
@@ -1783,19 +1783,19 @@ namespace Example
             try
             {
                 // Get id, name and codes of all countries.
-                array[CountrySingleLanguage] result = apiInstance.getCountriesList(xLang);
+                array[CountrySingleLanguage] result = apiInstance.getCountries(xLang);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.getCountriesList: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getCountries: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCountriesList-0-php">
+                            <div class="tab-pane" id="examples-Default-getCountries-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -1809,15 +1809,15 @@ $xLang = xLang_example; // String | Possible values: en, el
 
 
 try {
-    $result = $api_instance->getCountriesList($xLang);
+    $result = $api_instance->getCountries($xLang);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getCountriesList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getCountries: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCountriesList-0-perl">
+                            <div class="tab-pane" id="examples-Default-getCountries-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -1832,15 +1832,15 @@ my $xLang = xLang_example; # String | Possible values: en, el
 
 
 eval { 
-    my $result = $api_instance->getCountriesList(xLang => $xLang);
+    my $result = $api_instance->getCountries(xLang => $xLang);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->getCountriesList: $@\n";
+    warn "Exception when calling DefaultApi->getCountries: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getCountriesList-0-python">
+                            <div class="tab-pane" id="examples-Default-getCountries-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1859,10 +1859,10 @@ xLang = xLang_example # String | Possible values: en, el
 
 try: 
     # Get id, name and codes of all countries.
-    api_response = api_instance.getCountriesList(xLang)
+    api_response = api_instance.getCountries(xLang)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->getCountriesList: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getCountries: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1894,7 +1894,7 @@ except ApiException as e:
 
 
 													var view = new JSONSchemaView(schema,1);
-													var result = $('#d2e199_getCountriesList_xLang');
+													var result = $('#d2e199_getCountries_xLang');
 													result.empty();
 													result.append(view.render());
 
@@ -1904,7 +1904,7 @@ except ApiException as e:
 
 												});
 												</script>
-												<div id="d2e199_getCountriesList_xLang"></div>
+												<div id="d2e199_getCountries_xLang"></div>
 </td>
 </tr>
 
@@ -1918,17 +1918,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getCountriesList-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getCountries-200-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getCountriesList-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getCountries-200-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getCountriesList-200-schema">
-                                  <div id='responses-getCountriesList-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getCountries-200-schema">
+                                  <div id='responses-getCountries-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1963,17 +1963,17 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getCountriesList-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getCountriesList-200-schema-200');
+                                          $('#responses-getCountries-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getCountries-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getCountriesList-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getCountries-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getCountriesList-200-example">
+                                  <div class="tab-pane" id="responses-getCountries-200-example">
                                       <pre class="prettyprint"><code class="json">[{alpha2&#x3D;AF, alpha3&#x3D;AFG, id&#x3D;4, name&#x3D;AFGHANISTAN}, {id&#x3D;8, alpha2&#x3D;AL, alpha3&#x3D;ALB, name&#x3D;ALBANIA}]</code></pre>
                                 </div>
                             </div>
@@ -2693,10 +2693,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-getRegionsList">
-                      <article id="api-Default-getRegionsList-0" data-group="User" data-name="getRegionsList" data-version="0">
+                    <div id="api-Default-getRegions">
+                      <article id="api-Default-getRegions-0" data-group="User" data-name="getRegions" data-version="0">
                         <div class="pull-left">
-                          <h1>getRegionsList</h1>
+                          <h1>getRegions</h1>
                           <p>Get id and name of all greek regions.</p>
                         </div>
                         <div class="pull-right"></div>
@@ -2710,24 +2710,24 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-getRegionsList-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-getRegionsList-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-getRegionsList-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-getRegionsList-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-getRegionsList-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-getRegionsList-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-getRegionsList-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-getRegionsList-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-getRegionsList-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-getRegionsList-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-getRegionsList-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getRegions-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getRegions-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getRegions-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getRegions-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getRegions-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getRegions-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getRegions-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getRegions-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getRegions-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getRegions-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getRegions-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-getRegionsList-0-curl">
+                          <div class="tab-pane active" id="examples-Default-getRegions-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/region/regions"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-getRegionsList-0-java">
+                          <div class="tab-pane" id="examples-Default-getRegions-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -2751,17 +2751,17 @@ public class DefaultApiExample {
         String xLang = xLang_example; // String | Possible values: en, el
 
         try {
-            array[RegionSingleLanguage] result = apiInstance.getRegionsList(xLang);
+            array[RegionSingleLanguage] result = apiInstance.getRegions(xLang);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getRegionsList");
+            System.err.println("Exception when calling DefaultApi#getRegions");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-getRegionsList-0-android">
+                          <div class="tab-pane" id="examples-Default-getRegions-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -2771,20 +2771,20 @@ public class DefaultApiExample {
         String xLang = xLang_example; // String | Possible values: en, el
 
         try {
-            array[RegionSingleLanguage] result = apiInstance.getRegionsList(xLang);
+            array[RegionSingleLanguage] result = apiInstance.getRegions(xLang);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getRegionsList");
+            System.err.println("Exception when calling DefaultApi#getRegions");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-getRegionsList-0-groovy">
+  <div class="tab-pane" id="examples-Default-getRegions-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-getRegionsList-0-objc">
+                            <div class="tab-pane" id="examples-Default-getRegions-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 
 // Configure API key authorization: (authentication scheme: token)
@@ -2798,7 +2798,7 @@ String *xLang = xLang_example; // Possible values: en, el
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Get id and name of all greek regions.
-[apiInstance getRegionsListWith:xLang
+[apiInstance getRegionsWith:xLang
               completionHandler: ^(array[RegionSingleLanguage] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -2810,7 +2810,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getRegionsList-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getRegions-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
 var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
 
@@ -2833,14 +2833,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getRegionsList(xLang, callback);
+api.getRegions(xLang, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-getRegionsList-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getRegions-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-getRegionsList-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getRegions-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2849,7 +2849,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getRegionsListExample
+    public class getRegionsExample
     {
         public void main()
         {
@@ -2866,19 +2866,19 @@ namespace Example
             try
             {
                 // Get id and name of all greek regions.
-                array[RegionSingleLanguage] result = apiInstance.getRegionsList(xLang);
+                array[RegionSingleLanguage] result = apiInstance.getRegions(xLang);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.getRegionsList: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getRegions: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getRegionsList-0-php">
+                            <div class="tab-pane" id="examples-Default-getRegions-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -2892,15 +2892,15 @@ $xLang = xLang_example; // String | Possible values: en, el
 
 
 try {
-    $result = $api_instance->getRegionsList($xLang);
+    $result = $api_instance->getRegions($xLang);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getRegionsList: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getRegions: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getRegionsList-0-perl">
+                            <div class="tab-pane" id="examples-Default-getRegions-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -2915,15 +2915,15 @@ my $xLang = xLang_example; # String | Possible values: en, el
 
 
 eval { 
-    my $result = $api_instance->getRegionsList(xLang => $xLang);
+    my $result = $api_instance->getRegions(xLang => $xLang);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->getRegionsList: $@\n";
+    warn "Exception when calling DefaultApi->getRegions: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getRegionsList-0-python">
+                            <div class="tab-pane" id="examples-Default-getRegions-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2942,10 +2942,10 @@ xLang = xLang_example # String | Possible values: en, el
 
 try: 
     # Get id and name of all greek regions.
-    api_response = api_instance.getRegionsList(xLang)
+    api_response = api_instance.getRegions(xLang)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->getRegionsList: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getRegions: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2977,7 +2977,7 @@ except ApiException as e:
 
 
 													var view = new JSONSchemaView(schema,1);
-													var result = $('#d2e199_getRegionsList_xLang');
+													var result = $('#d2e199_getRegions_xLang');
 													result.empty();
 													result.append(view.render());
 
@@ -2987,7 +2987,7 @@ except ApiException as e:
 
 												});
 												</script>
-												<div id="d2e199_getRegionsList_xLang"></div>
+												<div id="d2e199_getRegions_xLang"></div>
 </td>
 </tr>
 
@@ -3001,17 +3001,17 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getRegionsList-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getRegions-200-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getRegionsList-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getRegions-200-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getRegionsList-200-schema">
-                                  <div id='responses-getRegionsList-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getRegions-200-schema">
+                                  <div id='responses-getRegions-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -3042,17 +3042,17 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getRegionsList-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getRegionsList-200-schema-200');
+                                          $('#responses-getRegions-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getRegions-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getRegionsList-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getRegions-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getRegionsList-200-example">
+                                  <div class="tab-pane" id="responses-getRegions-200-example">
                                       <pre class="prettyprint"><code class="json">[{id&#x3D;1, name&#x3D;AN. MAKEDONIAS &amp; THRAKIS}, {id&#x3D;2, name&#x3D;KENTRIKIS MAKEDONIAS}]</code></pre>
                                 </div>
                             </div>
@@ -3060,10 +3060,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-getUserAData">
-                      <article id="api-Default-getUserAData-0" data-group="User" data-name="getUserAData" data-version="0">
+                    <div id="api-Default-getUserA">
+                      <article id="api-Default-getUserA-0" data-group="User" data-name="getUserA" data-version="0">
                         <div class="pull-left">
-                          <h1>getUserAData</h1>
+                          <h1>getUserA</h1>
                           <p>Retrieve user data</p>
                         </div>
                         <div class="pull-right"></div>
@@ -3079,24 +3079,24 @@ Login required.
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-getUserAData-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-getUserAData-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-getUserAData-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-getUserAData-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-getUserAData-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-getUserAData-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-getUserAData-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-getUserAData-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-getUserAData-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-getUserAData-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-getUserAData-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getUserA-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getUserA-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getUserA-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserA-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserA-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getUserA-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserA-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserA-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getUserA-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getUserA-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getUserA-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-getUserAData-0-curl">
+                          <div class="tab-pane active" id="examples-Default-getUserA-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/authentication/logged-on"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-getUserAData-0-java">
+                          <div class="tab-pane" id="examples-Default-getUserA-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -3118,17 +3118,17 @@ public class DefaultApiExample {
 
         DefaultApi apiInstance = new DefaultApi();
         try {
-            UserA result = apiInstance.getUserAData();
+            UserA result = apiInstance.getUserA();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getUserAData");
+            System.err.println("Exception when calling DefaultApi#getUserA");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-getUserAData-0-android">
+                          <div class="tab-pane" id="examples-Default-getUserA-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -3136,20 +3136,20 @@ public class DefaultApiExample {
     public static void main(String[] args) {
         DefaultApi apiInstance = new DefaultApi();
         try {
-            UserA result = apiInstance.getUserAData();
+            UserA result = apiInstance.getUserA();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getUserAData");
+            System.err.println("Exception when calling DefaultApi#getUserA");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-getUserAData-0-groovy">
+  <div class="tab-pane" id="examples-Default-getUserA-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-getUserAData-0-objc">
+                            <div class="tab-pane" id="examples-Default-getUserA-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 
 // Configure API key authorization: (authentication scheme: token)
@@ -3161,7 +3161,7 @@ public class DefaultApiExample {
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // Retrieve user data
-[apiInstance getUserADataWithCompletionHandler: 
+[apiInstance getUserAWithCompletionHandler: 
               ^(UserA output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -3173,7 +3173,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserAData-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getUserA-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
 var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
 
@@ -3192,14 +3192,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getUserAData(callback);
+api.getUserA(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-getUserAData-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getUserA-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-getUserAData-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getUserA-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -3208,7 +3208,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getUserADataExample
+    public class getUserAExample
     {
         public void main()
         {
@@ -3223,19 +3223,19 @@ namespace Example
             try
             {
                 // Retrieve user data
-                UserA result = apiInstance.getUserAData();
+                UserA result = apiInstance.getUserA();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.getUserAData: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getUserA: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserAData-0-php">
+                            <div class="tab-pane" id="examples-Default-getUserA-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -3247,15 +3247,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token
 $api_instance = new Swagger\Client\Api\DefaultApi();
 
 try {
-    $result = $api_instance->getUserAData();
+    $result = $api_instance->getUserA();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getUserAData: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getUserA: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserAData-0-perl">
+                            <div class="tab-pane" id="examples-Default-getUserA-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -3268,15 +3268,15 @@ $WWW::SwaggerClient::Configuration::api_key->{'X-Auth-Token'} = 'YOUR_API_KEY';
 my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 
 eval { 
-    my $result = $api_instance->getUserAData();
+    my $result = $api_instance->getUserA();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->getUserAData: $@\n";
+    warn "Exception when calling DefaultApi->getUserA: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserAData-0-python">
+                            <div class="tab-pane" id="examples-Default-getUserA-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -3293,10 +3293,10 @@ api_instance = swagger_client.DefaultApi()
 
 try: 
     # Retrieve user data
-    api_response = api_instance.getUserAData()
+    api_response = api_instance.getUserA()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->getUserAData: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getUserA: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -3312,50 +3312,50 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getUserAData-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getUserA-200-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserAData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserA-200-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getUserAData-200-schema">
-                                  <div id='responses-getUserAData-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getUserA-200-schema">
+                                  <div id='responses-getUserA-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -3458,50 +3458,50 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getUserAData-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getUserAData-200-schema-200');
+                                          $('#responses-getUserA-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserA-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getUserAData-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getUserA-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">{data&#x3D;{ama&#x3D;1600791400, amka&#x3D;23038901379, ast&#x3D;Γ, birthCountry&#x3D;{alpha2&#x3D;GR, alpha3&#x3D;GRC, id&#x3D;300, name&#x3D;{el&#x3D;ΕΛΛΑΔΑ, en&#x3D;GREECE}}, birthDate&#x3D;1989-03-23, birthRegion&#x3D;{id&#x3D;11, name&#x3D;{el&#x3D;ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ, en&#x3D;VOREIOU AIGAIOU}}, bloodGroup&#x3D;A, city&#x3D;{id&#x3D;9088, name&#x3D;{el&#x3D;ΖΗΡΟΥ, en&#x3D;ZIROU}, prefecture&#x3D;{id&#x3D;0404, name&#x3D;{el&#x3D;ΠΡΕΒΕΖΑΣ, en&#x3D;PREVEZAS}, region&#x3D;{id&#x3D;4, name&#x3D;{el&#x3D;ΗΠΕΙΡΟΥ, en&#x3D;IPEIROU}}}}, education&#x3D;LEVEL7, email&#x3D;papadakis@example.com, fathersName&#x3D;ΓΕΩΡΓΙΟΣ, firstname&#x3D;ΙΩΑΝΝΗΣ, gender&#x3D;MALE, imported&#x3D;false, lastname&#x3D;ΠΑΠΑΔΑΚΗΣ, mothersName&#x3D;ΙΟΥΛΙΑ, phoneNumber&#x3D;2152157865, rhesus&#x3D;NEGATIVE, ssnCountry&#x3D;{alpha2&#x3D;GR, alpha3&#x3D;GRC, id&#x3D;300, name&#x3D;{el&#x3D;ΕΛΛΑΔΑ, en&#x3D;GREECE}}, street&#x3D;ΓΚΑΝΤΕΜΗ, streetNumber&#x3D;13}, deleted&#x3D;false, duplicate&#x3D;false, id&#x3D;87588, idikaVerified&#x3D;true}</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">papadakis@example.com</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">8616993</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">2016-06-23T13:03:47.308+0000</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">ACTIVE</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">BloodDonorUser</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">papadakis</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserAData-200-example">
+                                  <div class="tab-pane" id="responses-getUserA-200-example">
                                       <pre class="prettyprint"><code class="json">4</code></pre>
                                 </div>
                             </div>
@@ -3509,10 +3509,10 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Default-getUserBData">
-                      <article id="api-Default-getUserBData-0" data-group="User" data-name="getUserBData" data-version="0">
+                    <div id="api-Default-getUserB">
+                      <article id="api-Default-getUserB-0" data-group="User" data-name="getUserB" data-version="0">
                         <div class="pull-left">
-                          <h1>getUserBData</h1>
+                          <h1>getUserB</h1>
                           <p>TBA</p>
                         </div>
                         <div class="pull-right"></div>
@@ -3526,24 +3526,24 @@ except ApiException as e:
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Default-getUserBData-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Default-getUserBData-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Default-getUserBData-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Default-getUserBData-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Default-getUserBData-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Default-getUserBData-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Default-getUserBData-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Default-getUserBData-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Default-getUserBData-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Default-getUserBData-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Default-getUserBData-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Default-getUserB-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-getUserB-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-getUserB-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserB-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserB-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-getUserB-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-getUserB-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-getUserB-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-getUserB-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-getUserB-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-getUserB-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Default-getUserBData-0-curl">
+                          <div class="tab-pane active" id="examples-Default-getUserB-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X <span style="text-transform: uppercase;">get</span> -H "X-Auth-Token: [[apiKey]]" "https://service.blooddonorregistry.gr/blood-donor-registry-web-public/rest/blooddonor/{id}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Default-getUserBData-0-java">
+                          <div class="tab-pane" id="examples-Default-getUserB-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -3566,17 +3566,17 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String id = id_example; // String | 
         try {
-            UserB result = apiInstance.getUserBData(id);
+            UserB result = apiInstance.getUserB(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getUserBData");
+            System.err.println("Exception when calling DefaultApi#getUserB");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Default-getUserBData-0-android">
+                          <div class="tab-pane" id="examples-Default-getUserB-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
 
 public class DefaultApiExample {
@@ -3585,20 +3585,20 @@ public class DefaultApiExample {
         DefaultApi apiInstance = new DefaultApi();
         String id = id_example; // String | 
         try {
-            UserB result = apiInstance.getUserBData(id);
+            UserB result = apiInstance.getUserB(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getUserBData");
+            System.err.println("Exception when calling DefaultApi#getUserB");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Default-getUserBData-0-groovy">
+  <div class="tab-pane" id="examples-Default-getUserB-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Default-getUserBData-0-objc">
+                            <div class="tab-pane" id="examples-Default-getUserB-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Configuration *apiConfig = [Configuration sharedConfig];
 
 // Configure API key authorization: (authentication scheme: token)
@@ -3611,7 +3611,7 @@ String *id = id_example; //
 DefaultApi *apiInstance = [[DefaultApi alloc] init];
 
 // TBA
-[apiInstance getUserBDataWith:id
+[apiInstance getUserBWith:id
               completionHandler: ^(UserB output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -3623,7 +3623,7 @@ DefaultApi *apiInstance = [[DefaultApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserBData-0-javascript">
+                            <div class="tab-pane" id="examples-Default-getUserB-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var BloodDonorRegistryForDonorsApplication = require('blood_donor_registry_for_donors_application');
 var defaultClient = BloodDonorRegistryForDonorsApplication.ApiClient.instance;
 
@@ -3645,14 +3645,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getUserBData(id, callback);
+api.getUserB(id, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Default-getUserBData-0-angular">
+                            <!--<div class="tab-pane" id="examples-Default-getUserB-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Default-getUserBData-0-csharp">
+                            <div class="tab-pane" id="examples-Default-getUserB-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -3661,7 +3661,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class getUserBDataExample
+    public class getUserBExample
     {
         public void main()
         {
@@ -3677,19 +3677,19 @@ namespace Example
             try
             {
                 // TBA
-                UserB result = apiInstance.getUserBData(id);
+                UserB result = apiInstance.getUserB(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.getUserBData: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.getUserB: " + e.Message );
             }
         }
     }
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserBData-0-php">
+                            <div class="tab-pane" id="examples-Default-getUserB-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -3702,15 +3702,15 @@ $api_instance = new Swagger\Client\Api\DefaultApi();
 $id = id_example; // String | 
 
 try {
-    $result = $api_instance->getUserBData($id);
+    $result = $api_instance->getUserB($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getUserBData: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->getUserB: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserBData-0-perl">
+                            <div class="tab-pane" id="examples-Default-getUserB-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::DefaultApi;
@@ -3724,15 +3724,15 @@ my $api_instance = WWW::SwaggerClient::DefaultApi->new();
 my $id = id_example; # String | 
 
 eval { 
-    my $result = $api_instance->getUserBData(id => $id);
+    my $result = $api_instance->getUserB(id => $id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DefaultApi->getUserBData: $@\n";
+    warn "Exception when calling DefaultApi->getUserB: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Default-getUserBData-0-python">
+                            <div class="tab-pane" id="examples-Default-getUserB-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -3750,10 +3750,10 @@ id = id_example # String |
 
 try: 
     # TBA
-    api_response = api_instance.getUserBData(id)
+    api_response = api_instance.getUserB(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->getUserBData: %s\n" % e)</code></pre>
+    print("Exception when calling DefaultApi->getUserB: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -3783,7 +3783,7 @@ except ApiException as e:
 
 
 													var view = new JSONSchemaView(schema,1);
-													var result = $('#d2e199_getUserBData_id');
+													var result = $('#d2e199_getUserB_id');
 													result.empty();
 													result.append(view.render());
 
@@ -3793,7 +3793,7 @@ except ApiException as e:
 
 												});
 												</script>
-												<div id="d2e199_getUserBData_id"></div>
+												<div id="d2e199_getUserB_id"></div>
 </td>
 </tr>
 
@@ -3808,41 +3808,41 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getUserBData-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getUserB-200-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-200-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-200-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getUserBData-200-schema">
-                                  <div id='responses-getUserBData-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getUserB-200-schema">
+                                  <div id='responses-getUserB-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -3936,41 +3936,41 @@ except ApiException as e:
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getUserBData-200-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getUserBData-200-schema-200');
+                                          $('#responses-getUserB-200-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserB-200-schema-200');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getUserBData-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getUserB-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">{id&#x3D;87588, city&#x3D;{prefecture&#x3D;{id&#x3D;0404, name&#x3D;ΠΡΕΒΕΖΑΣ, region&#x3D;{id&#x3D;4, name&#x3D;ΗΠΕΙΡΟΥ}}, id&#x3D;9088, name&#x3D;ΖΗΡΟΥ}, verification&#x3D;{ama&#x3D;false, adt&#x3D;false, ast&#x3D;false, adb&#x3D;false, amka&#x3D;false, aad&#x3D;false, aat&#x3D;false, aap&#x3D;false, firstname&#x3D;false, lastname&#x3D;false, fathersName&#x3D;false, mothersName&#x3D;false, birthDate&#x3D;false}, birthCountry&#x3D;{id&#x3D;300, alpha2&#x3D;GR, alpha3&#x3D;GRC, name&#x3D;ΕΛΛΑΔΑ}, birthRegion&#x3D;{id&#x3D;11, name&#x3D;ΒΟΡΕΙΟΥ ΑΙΓΑΙΟΥ}, discardedOnce&#x3D;false, recentVisit&#x3D;false, idikaVerified&#x3D;true, ssnCountry&#x3D;{id&#x3D;300, alpha2&#x3D;GR, alpha3&#x3D;GRC, name&#x3D;ΕΛΛΑΔΑ}, firstname&#x3D;ΙΩΑΝΝΗΣ, lastname&#x3D;ΠΑΠΑΔΑΚΗΣ, ast&#x3D;Γ, education&#x3D;LEVEL7, street&#x3D;ΜΕΣΟΓΕΙΩΝ, streetNumber&#x3D;13, phoneNumber&#x3D;2152157865, email&#x3D;papadakis@example.com, ama&#x3D;1600791400, bloodGroup&#x3D;A, rhesus&#x3D;NEGATIVE, fathersName&#x3D;ΓΕΩΡΓΙΟΣ, mothersName&#x3D;ΙΟΥΛΙΑ, amka&#x3D;23038901379, gender&#x3D;MALE, birthDate&#x3D;1989-03-23}</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">8616993</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">papadakis</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">papadakis@example.com</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">ACTIVE</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">BloodDonorUser</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">true</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">2016-06-23T13:03:47.308+0000</code></pre>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-200-example">
+                                  <div class="tab-pane" id="responses-getUserB-200-example">
                                       <pre class="prettyprint"><code class="json">CnEi7MuQBBnnaggqfiPBuImTjJLXpwFTcU6nKIJN4yc</code></pre>
                                 </div>
                             </div>
@@ -3982,17 +3982,17 @@ When the ID is valid but the logged in user has no permission to get its data.
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getUserBData-401-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getUserB-401-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-401-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-401-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getUserBData-401-schema">
-                                  <div id='responses-getUserBData-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getUserB-401-schema">
+                                  <div id='responses-getUserB-401-schema-401' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -4016,17 +4016,17 @@ When the ID is valid but the logged in user has no permission to get its data.
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getUserBData-401-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getUserBData-401-schema-401');
+                                          $('#responses-getUserB-401-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserB-401-schema-401');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getUserBData-401-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getUserB-401-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-401-example">
+                                  <div class="tab-pane" id="responses-getUserB-401-example">
                                       <pre class="prettyprint"><code class="json">{error&#x3D;Not Allowed}</code></pre>
                                 </div>
                             </div>
@@ -4038,17 +4038,17 @@ When there is no blood donor with the current ID or no ID has been sent.
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-getUserBData-404-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-getUserB-404-schema">Schema</a>
                                 </li>
 
                                   <li class="">
-                                    <a data-toggle="tab" href="#responses-getUserBData-404-example">Response Example</a>
+                                    <a data-toggle="tab" href="#responses-getUserB-404-example">Response Example</a>
                                   </li>
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-getUserBData-404-schema">
-                                  <div id='responses-getUserBData-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-getUserB-404-schema">
+                                  <div id='responses-getUserB-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                                                <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -4072,17 +4072,17 @@ When there is no blood donor with the current ID or no ID has been sent.
                                         }, function(err, resolved, metadata) {
                                           //console.log(JSON.stringify(resolved));
                                           var view = new JSONSchemaView(resolved.schema, 3);
-                                          $('#responses-getUserBData-404-schema-data').val(JSON.stringify(resolved.schema));
-                                          var result = $('#responses-getUserBData-404-schema-404');
+                                          $('#responses-getUserB-404-schema-data').val(JSON.stringify(resolved.schema));
+                                          var result = $('#responses-getUserB-404-schema-404');
                                           result.empty();
                                           result.append(view.render());
                                         });
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-getUserBData-404-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-getUserB-404-schema-data' type='hidden' value=''></input>
                                 </div>
-                                  <div class="tab-pane" id="responses-getUserBData-404-example">
+                                  <div class="tab-pane" id="responses-getUserB-404-example">
                                       <pre class="prettyprint"><code class="json">{error&#x3D;Not Found}</code></pre>
                                 </div>
                             </div>
@@ -4104,7 +4104,7 @@ When there is no blood donor with the current ID or no ID has been sent.
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2017-04-07T14:39:34.382Z
+              Generated 2017-04-11T13:46:53.466Z
             </div>
           </div>
       </div>
