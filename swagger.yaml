@@ -69,7 +69,7 @@ paths:
       description: |
         TBA
         Login required.
-      operationId: GetUserAData
+      operationId: getUserA
       consumes:
         - application/json
         - text/plain
@@ -172,7 +172,7 @@ paths:
     get:
       summary: TBA
       description: Retrieve user data
-      operationId: GetUserBData
+      operationId: getUserB
       parameters:
       - name: 'id'
         in: path
@@ -292,7 +292,7 @@ paths:
     get:
       summary: TBA
       description: Retrieve user request
-      operationId: GetDonorRequest
+      operationId: getDonorRequest
       parameters:
       - name: 'id'
         in: path
@@ -328,7 +328,7 @@ paths:
         - ISO 3166-1 alpha-2
         - ISO 3166-1 alpha-3
 
-      operationId: GetCountriesList
+      operationId: getCountries
       consumes:
         - application/json
         - text/plain
@@ -374,7 +374,7 @@ paths:
         Get id and name of all greek regions.
 
       description: The name of the region is in the language that the request mentions.
-      operationId: GetRegionsList
+      operationId: getRegions
       consumes:
         - application/json
         - text/plain
@@ -415,7 +415,7 @@ paths:
 
 
       description: Get a list with information about the cities of a region in the requested language.
-      operationId: GetCitiesList
+      operationId: getCities
       consumes:
         - application/json
         - text/plain
